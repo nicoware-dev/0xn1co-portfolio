@@ -1,0 +1,25 @@
+---
+const {name} = Astro.props;
+---
+
+<a href="/" class="profile">
+    <h3 class="color__gradiente header__title">
+        {name}
+    </h3>
+</a>
+
+<style>
+    .profile {
+        display: flex;
+        align-items: center;
+    }
+
+    .header__title {
+        font-size: var(--text-title);
+        font-weight: 600;
+        background: var(--text-gradient);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+</style>

@@ -1,0 +1,197 @@
+---
+const skills = [
+    {
+        name: "HTML",
+        icon: "skill-icons:html",
+        color: "#E34F26"
+    },
+    {
+        name: "CSS",
+        icon: "skill-icons:css",
+        color: "#1572B6"
+    },
+    {
+        name: "Tailwind",
+        icon: "skill-icons:tailwindcss",
+        color: "#06B6D4"
+    },
+    {
+        name: "React",
+        icon: "skill-icons:react",
+        color: "#00D1FF"
+    },
+    {
+        name: "Angular",
+        icon: "skill-icons:angular",
+        color: "#FFFFFF"
+    },
+    {
+        name: "JavaScript",
+        icon: "skill-icons:javascript",
+        color: "#F7DF1E"
+    },
+    {
+        name: "TypeScript",
+        icon: "skill-icons:typescript",
+        color: "#3178C6"
+    },
+    {
+        name: "Python",
+        icon: "skill-icons:python",
+        color: "#3776AB"
+    },
+    {
+        name: "Solidity",
+        icon: "skill-icons:solidity",
+        color: "#F7931A"
+    },
+    {
+        name: "Ethereum",
+        icon: "skill-icons:ethereum",
+        color: "#FFFFFF"
+    },
+    {
+        name: "AI/ML",
+        icon: "skill-icons:tensorflow",
+        color: "#00FF9D"
+    },
+    {
+        name: "n8n",
+        icon: "simple-icons:n8n",
+        color: "#FFFFFF"
+    },
+    {
+        name: "Node.js",
+        icon: "skill-icons:nodejs",
+        color: "#339933"
+    },
+    {
+        name: "Docker",
+        icon: "skill-icons:docker",
+        color: "#0DB7ED"
+    },
+    {
+        name: "MongoDB",
+        icon: "skill-icons:mongodb",
+        color: "#4DB33D"
+    }
+];
+---
+
+<div class="terminal">
+    <div class="terminal-header">
+        <div class="terminal-buttons">
+            <span class="terminal-button red"></span>
+            <span class="terminal-button yellow"></span>
+            <span class="terminal-button green"></span>
+        </div>
+        <div class="terminal-title">nicolas@root: ~$ printskills</div>
+    </div>
+    <div class="terminal-content">
+        <h2 class="terminal-output">Technical Expertise</h2>
+        <div class="skills-grid">
+            {skills.map((skill) => (
+                <div class="skill-item">
+                    <iconify-icon icon={skill.icon} style={`color: ${skill.color}`} />
+                    <span class="skill-name">{skill.name}</span>
+                </div>
+            ))}
+        </div>
+    </div>
+</div>
+
+<style>
+    .terminal {
+        background: rgba(13, 0, 69, 0.7);
+        border-radius: 16px;
+        border: 1px solid rgba(123, 74, 226, 0.2);
+        overflow: hidden;
+        width: 100%;
+        max-width: 800px;
+    }
+
+    .terminal-header {
+        background: rgba(30, 30, 30, 0.9);
+        padding: 1rem;
+        display: flex;
+        align-items: center;
+    }
+
+    .terminal-buttons {
+        display: flex;
+        gap: 0.5rem;
+        margin-right: 1rem;
+    }
+
+    .terminal-button {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+    }
+
+    .red { background: #FF5F56; }
+    .yellow { background: #FFBD2E; }
+    .green { background: #27C93F; }
+
+    .terminal-title {
+        color: var(--primary-90);
+        font-family: 'Fira Code', monospace;
+        font-size: 1.4rem;
+    }
+
+    .terminal-content {
+        padding: 3rem;
+    }
+
+    .terminal-output {
+        color: #00FF9D;
+        font-size: 2.4rem;
+        margin-bottom: 3rem;
+        font-family: 'Fira Code', monospace;
+        text-align: center;
+    }
+
+    .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 3rem;
+        padding: 0 2rem;
+    }
+
+    .skill-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .skill-item iconify-icon {
+        font-size: 48px;
+        width: 48px;
+        height: 48px;
+    }
+
+    .skill-name {
+        color: var(--primary-90);
+        font-size: 1.4rem;
+        font-family: 'Fira Code', monospace;
+        text-align: center;
+    }
+
+    @media (max-width: 768px) {
+        .skills-grid {
+            grid-template-columns: repeat(2, 1fr);
+            padding: 0;
+        }
+
+        .terminal-content {
+            padding: 2rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .skills-grid {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+</style> 

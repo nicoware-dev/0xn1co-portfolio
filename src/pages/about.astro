@@ -1,0 +1,368 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/header/Header.astro";
+import { mainMenu } from "../components/data/menuData";
+import Footer from "../components/Footer/Footer.astro";
+import Title from "../components/atoms/Title.astro";
+import SocialIcons from "../components/SocialIcons.astro";
+---
+
+<Layout title="About | Nicolas Dominici">
+    <Header origin={mainMenu} />
+    <main class="pt-40 pb-20 px-4">
+        <div class="max-w-[var(--max-width)] mx-auto">
+            <div class="about-header text-center mb-16">
+                <Title contenido="About Me" />
+                <h2 class="subtitle">Bridging Technology and Business with Innovative Solutions</h2>
+            </div>
+
+            <div class="about-content">
+                <div class="journey-section">
+                    <h3>Professional Journey</h3>
+                    <p>With a strong foundation in <strong>Electronics Engineering</strong>, I've dedicated my career to solving complex problems and building technologies that empower businesses. My passion lies in understanding the unique challenges organizations face and crafting tailored solutions that not only address current needs but also lay the groundwork for future growth.</p>
+                    <p>Over the years, I've honed my skills in various domains, including software development, AI integration, blockchain technologies, and strategic consulting. My diverse experience enables me to see the bigger picture and connect the dots between technology and business objectives.</p>
+                </div>
+
+                <div class="value-section">
+                    <h3>Unique Value Proposition</h3>
+                    <div class="value-grid">
+                        <div class="value-item">
+                            <div class="icon-container">
+                                <iconify-icon icon="mdi:chart-bar" width="32" height="32" />
+                            </div>
+                            <h4>Versatile Expertise</h4>
+                            <p>Proficient in multiple technologies and platforms, capable of delivering a wide range of solutions.</p>
+                        </div>
+                        <div class="value-item">
+                            <div class="icon-container">
+                                <iconify-icon icon="mdi:strategy" width="32" height="32" />
+                            </div>
+                            <h4>Strategic Thinker</h4>
+                            <p>Ability to align technical implementations with business goals for maximum impact.</p>
+                        </div>
+                        <div class="value-item">
+                            <div class="icon-container">
+                                <iconify-icon icon="mdi:puzzle" width="32" height="32" />
+                            </div>
+                            <h4>Problem Solver</h4>
+                            <p>Passionate about tackling complex challenges and turning them into opportunities for innovation.</p>
+                        </div>
+                        <div class="value-item">
+                            <div class="icon-container">
+                                <iconify-icon icon="mdi:account-group" width="32" height="32" />
+                            </div>
+                            <h4>Collaborative Approach</h4>
+                            <p>Committed to working closely with clients to understand their needs and exceed expectations.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="expertise-section">
+                    <h3>Skills and Expertise</h3>
+                    <div class="expertise-grid">
+                        <div class="expertise-item">
+                            <div class="icon-container">
+                                <iconify-icon icon="mdi:code-braces" width="48" height="48" />
+                            </div>
+                            <h4>Software Development</h4>
+                            <p>Full-stack development, system architecture, application design</p>
+                        </div>
+                        <div class="expertise-item">
+                            <div class="icon-container">
+                                <iconify-icon icon="mdi:robot" width="48" height="48" />
+                            </div>
+                            <h4>AI and Machine Learning</h4>
+                            <p>AI automations, data analytics, predictive modeling</p>
+                        </div>
+                        <div class="expertise-item">
+                            <div class="icon-container">
+                                <iconify-icon icon="mdi:cube-scan" width="48" height="48" />
+                            </div>
+                            <h4>Blockchain Technologies</h4>
+                            <p>Smart contracts, decentralized applications, blockchain integration</p>
+                        </div>
+                        <div class="expertise-item">
+                            <div class="icon-container">
+                                <iconify-icon icon="mdi:lightbulb-on" width="48" height="48" />
+                            </div>
+                            <h4>Consulting</h4>
+                            <p>Technical advisory, process improvement, technology strategy</p>
+                        </div>
+                        <div class="expertise-item">
+                            <div class="icon-container">
+                                <iconify-icon icon="mdi:file-document-edit" width="48" height="48" />
+                            </div>
+                            <h4>Content Creation</h4>
+                            <p>Educational resources, technical documentation, thought leadership articles</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="education-section">
+                    <h3>Education and Certifications</h3>
+                    <ul>
+                        <li>
+                            <iconify-icon icon="carbon:education" />
+                            <div>
+                                <h4>Electronics Engineering</h4>
+                                <p>Universidad Nacional de La Plata</p>
+                            </div>
+                        </li>
+                        <li>
+                            <iconify-icon icon="carbon:certificate" />
+                            <div>
+                                <h4>Global Sales Management Program</h4>
+                                <p>Rockwell Automation</p>
+                            </div>
+                        </li>
+                        <li>
+                            <iconify-icon icon="carbon:certificate" />
+                            <div>
+                                <h4>Certified in Advanced English</h4>
+                                <p>Cambridge University</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="cta-section">
+                    <a href="../docs/cv_nicolas_dominici.pdf" class="download-btn">
+                        <iconify-icon icon="carbon:document-download" />
+                        Download My Resume
+                    </a>
+                    <div class="social-links">
+                        <SocialIcons width="30" height="30" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <Footer />
+</Layout>
+
+<style>
+    .subtitle {
+        font-size: 2.4rem;
+        color: var(--primary-90);
+        margin-top: 1rem;
+    }
+
+    .about-content {
+        display: flex;
+        flex-direction: column;
+        gap: 6rem;
+    }
+
+    h3 {
+        font-size: 2.4rem;
+        font-weight: 600;
+        margin-bottom: 2rem;
+        background: var(--text-gradient);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .journey-section p {
+        font-size: 1.8rem;
+        line-height: 1.6;
+        color: var(--primary-90);
+        margin-bottom: 2rem;
+    }
+
+    .value-grid, .expertise-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 3rem;
+    }
+
+    .value-item, .expertise-item {
+        background: rgba(123, 74, 226, 0.1);
+        border-radius: 16px;
+        padding: 2.5rem;
+        border: 1px solid rgba(123, 74, 226, 0.2);
+        transition: transform 0.3s ease;
+    }
+
+    .value-item:hover, .expertise-item:hover {
+        transform: translateY(-5px);
+        background: rgba(123, 74, 226, 0.15);
+    }
+
+    .value-item iconify-icon, .expertise-item iconify-icon {
+        color: var(--primary-100);
+        margin-bottom: 1.5rem;
+    }
+
+    .value-item h4, .expertise-item h4 {
+        font-size: 2rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: var(--primary-100);
+    }
+
+    .value-item p, .expertise-item p {
+        font-size: 1.6rem;
+        color: var(--primary-90);
+        line-height: 1.5;
+    }
+
+    .education-section ul {
+        display: grid;
+        gap: 2rem;
+    }
+
+    .education-section li {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        padding: 2rem;
+        background: rgba(123, 74, 226, 0.1);
+        border-radius: 16px;
+        border: 1px solid rgba(123, 74, 226, 0.2);
+    }
+
+    .education-section iconify-icon {
+        color: var(--primary-100);
+        font-size: 3rem;
+    }
+
+    .education-section h4 {
+        font-size: 1.8rem;
+        font-weight: 600;
+        color: var(--primary-100);
+    }
+
+    .education-section p {
+        font-size: 1.6rem;
+        color: var(--primary-90);
+    }
+
+    .cta-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 3rem;
+        margin-top: 4rem;
+    }
+
+    .download-btn {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1.5rem 3rem;
+        font-size: 1.8rem;
+        font-weight: 600;
+        color: var(--white);
+        background: linear-gradient(45deg, var(--primary) 0%, var(--secondary) 100%);
+        border-radius: 8px;
+        transition: transform 0.3s ease;
+    }
+
+    .download-btn:hover {
+        transform: translateY(-2px);
+    }
+
+    @media (max-width: 768px) {
+        .value-grid, .expertise-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .education-section li {
+            flex-direction: column;
+            text-align: center;
+            gap: 1rem;
+        }
+    }
+
+    .expertise-section {
+        padding: 6rem 0;
+    }
+
+    .expertise-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 3rem;
+        margin-top: 3rem;
+    }
+
+    .expertise-item {
+        background: var(--card-gradient);
+        border-radius: 16px;
+        padding: 3rem;
+        border: 1px solid rgba(123, 74, 226, 0.2);
+        transition: all 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .expertise-item:hover {
+        transform: translateY(-5px);
+        border-color: var(--accent);
+        background: var(--hover-gradient);
+    }
+
+    .icon-container {
+        background: rgba(123, 74, 226, 0.1);
+        border-radius: 50%;
+        width: 96px;
+        height: 96px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 2rem;
+        transition: all 0.3s ease;
+    }
+
+    .expertise-item:hover .icon-container {
+        background: rgba(123, 74, 226, 0.2);
+        transform: scale(1.1);
+    }
+
+    .expertise-item iconify-icon {
+        color: var(--accent);
+        transition: all 0.3s ease;
+    }
+
+    .expertise-item:hover iconify-icon {
+        transform: scale(1.1);
+    }
+
+    .expertise-item h4 {
+        font-size: 2.4rem;
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+        background: var(--text-gradient);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .expertise-item p {
+        font-size: 1.6rem;
+        color: var(--primary-90);
+        line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+        .expertise-grid {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .expertise-item {
+            padding: 2.5rem;
+        }
+
+        .icon-container {
+            width: 80px;
+            height: 80px;
+        }
+
+        .expertise-item h4 {
+            font-size: 2rem;
+        }
+    }
+</style>

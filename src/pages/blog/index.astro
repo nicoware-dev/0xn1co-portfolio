@@ -1,0 +1,160 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/header/Header.astro";
+import { mainMenu } from "../../components/data/menuData";
+import Footer from "../../components/Footer/Footer.astro";
+import Title from "../../components/atoms/Title.astro";
+import FormattedDate from "../../components/FormattedDate.astro";
+import { getCollection } from 'astro:content';
+
+// Get all blog posts
+const posts = await getCollection('blog', ({ data }) => {
+    return import.meta.env.PROD ? !data.draft : true;
+});
+
+// Sort by date
+const sortedPosts = posts.sort(
+    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+---
+
+<Layout title="Blog | Nicolas Dominici">
+    <Header origin={mainMenu} />
+    <main class="pt-40 pb-20 px-4">
+        <div class="max-w-[var(--max-width)] mx-auto">
+            <div class="text-center mb-16">
+                <Title contenido="Latest Insights" />
+                <h2 class="subtitle">Thoughts and Perspectives on Technology and Innovation</h2>
+            </div>
+
+            <div class="blog-grid">
+                {sortedPosts.map((post) => (
+                    <a href={`/blog/${post.slug}/`} class="blog-card scroll-animate fade-up">
+                        <div class="card-image">
+                            <img 
+                                src={post.data.heroImage} 
+                                alt={post.data.title} 
+                                loading="lazy"
+                            />
+                            <div class="date-badge">
+                                <FormattedDate date={post.data.pubDate} clase="date-text"/>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3>{post.data.title}</h3>
+                            <p>{post.data.description}</p>
+                            <div class="read-more">
+                                Read More
+                                <iconify-icon icon="mdi:arrow-right" width="20" height="20" />
+                            </div>
+                        </div>
+                    </a>
+                ))}
+            </div>
+        </div>
+    </main>
+    <Footer />
+</Layout>
+
+<style>
+    .subtitle {
+        font-size: 2.4rem;
+        color: var(--primary-90);
+        margin-top: 1rem;
+    }
+
+    .blog-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 3rem;
+    }
+
+    .blog-card {
+        background: var(--card-gradient);
+        border-radius: 16px;
+        overflow: hidden;
+        border: 1px solid rgba(123, 74, 226, 0.2);
+        transition: all 0.3s ease;
+    }
+
+    .blog-card:hover {
+        transform: translateY(-5px);
+        border-color: var(--accent);
+        background: var(--hover-gradient);
+    }
+
+    .card-image {
+        position: relative;
+        width: 100%;
+        height: 240px;
+    }
+
+    .card-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .date-badge {
+        position: absolute;
+        bottom: 1rem;
+        right: 1rem;
+        background: rgba(0, 0, 0, 0.7);
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        backdrop-filter: blur(4px);
+    }
+
+    .date-text {
+        color: var(--primary-100);
+        font-size: 1.4rem;
+    }
+
+    .card-content {
+        padding: 2rem;
+    }
+
+    .card-content h3 {
+        font-size: 2.2rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        background: var(--text-gradient);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .card-content p {
+        font-size: 1.6rem;
+        color: var(--primary-90);
+        margin-bottom: 2rem;
+        line-height: 1.6;
+    }
+
+    .read-more {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 1.6rem;
+        color: var(--accent);
+        transition: all 0.3s ease;
+    }
+
+    .blog-card:hover .read-more {
+        gap: 1rem;
+    }
+
+    @media (max-width: 768px) {
+        .blog-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .card-image {
+            height: 200px;
+        }
+
+        .card-content h3 {
+            font-size: 2rem;
+        }
+    }
+</style>

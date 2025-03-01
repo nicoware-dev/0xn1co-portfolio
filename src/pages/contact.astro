@@ -1,0 +1,211 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/header/Header.astro";
+import { mainMenu } from "../components/data/menuData";
+import Footer from "../components/Footer/Footer.astro";
+import Title from "../components/atoms/Title.astro";
+import SocialIcons from "../components/SocialIcons.astro";
+import { ContactForm } from "../components/ContactForm";
+import { Toaster } from 'sonner';
+---
+
+<Layout title="Contact | Nicolas Dominici">
+    <Header origin={mainMenu} />
+    <main class="pt-40 pb-20 px-4">
+        <div class="max-w-[var(--max-width)] mx-auto">
+            <div class="text-center mb-16">
+                <Title contenido="Let's Connect" />
+                <h2 class="subtitle">Bring Your Ideas to Life</h2>
+            </div>
+
+            <div class="contact-grid">
+                <!-- Contact Info Section -->
+                <div class="contact-info">
+                    <p class="intro-text">
+                        I'm always excited to discuss new projects, ideas, or opportunities. Whether you have a specific project in mind or need guidance on leveraging technology for your business, feel free to reach out.
+                    </p>
+                    
+                    <div class="contact-methods">
+                        <div class="contact-item">
+                            <iconify-icon icon="mdi:email" width="24" height="24" />
+                            <a href="mailto:nicolasdominici@outlook.com">nicolasdominici@outlook.com</a>
+                        </div>
+                        <div class="contact-item">
+                            <iconify-icon icon="mdi:telegram" width="24" height="24" />
+                            <a href="https://t.me/n1c0_dev" target="_blank">@n1c0_dev</a>
+                        </div>
+                        <div class="contact-item">
+                            <iconify-icon icon="ic:baseline-discord" width="24" height="24" />
+                            <a href="https://discord.com/users/0xn1c0" target="_blank">0xn1c0</a>
+                        </div>
+                        <div class="contact-item">
+                            <iconify-icon icon="mdi:map-marker" width="24" height="24" />
+                            <span>Corrientes, Argentina</span>
+                        </div>
+                    </div>
+
+                    <div class="social-icons-wrapper">
+                        <SocialIcons width="30" height="30" />
+                    </div>
+                </div>
+
+                <!-- Contact Form Section -->
+                <div class="contact-form-container">
+                    <ContactForm client:load />
+                </div>
+            </div>
+        </div>
+    </main>
+    <Footer />
+    <Toaster client:load position="top-right" expand={false} richColors closeButton />
+</Layout>
+
+<style>
+    .subtitle {
+        font-size: 2.4rem;
+        color: var(--primary-90);
+        margin-top: 1rem;
+    }
+
+    .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr 1.5fr;
+        gap: 6rem;
+        margin-top: 4rem;
+    }
+
+    .intro-text {
+        font-size: 1.8rem;
+        line-height: 1.6;
+        color: var(--primary-90);
+        margin-bottom: 4rem;
+    }
+
+    .contact-methods {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        margin-bottom: 4rem;
+    }
+
+    .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        font-size: 1.6rem;
+        color: var(--primary-90);
+    }
+
+    .contact-item iconify-icon {
+        color: var(--accent);
+    }
+
+    .contact-item a {
+        color: var(--primary-90);
+        transition: color 0.3s ease;
+    }
+
+    .contact-item a:hover {
+        color: var(--accent);
+    }
+
+    .social-icons-wrapper {
+        display: flex;
+        align-items: flex-start;
+        margin-top: 2rem;
+    }
+
+    .contact-form-container {
+        background: rgba(123, 74, 226, 0.1);
+        border-radius: 16px;
+        padding: 4rem;
+        border: 1px solid rgba(123, 74, 226, 0.2);
+    }
+
+    .contact-form {
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
+    }
+
+    .form-group {
+        margin-bottom: 2.5rem;
+    }
+
+    .form-group label {
+        display: block;
+        font-size: 1.6rem;
+        color: var(--primary-90);
+        margin-bottom: 1rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        width: 100%;
+        padding: 1.2rem;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(123, 74, 226, 0.2);
+        border-radius: 8px;
+        color: var(--primary-100);
+        font-size: 1.6rem;
+        transition: all 0.3s ease;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+        outline: none;
+        border-color: var(--accent);
+        background: rgba(255, 255, 255, 0.1);
+    }
+
+    .submit-btn {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1.5rem 3rem;
+        background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+        border: none;
+        border-radius: 8px;
+        color: var(--primary-100);
+        font-size: 1.6rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+    }
+
+    .submit-btn:hover {
+        transform: translateY(-2px);
+    }
+
+    .submit-btn:disabled {
+        opacity: 0.7;
+        cursor: not-allowed;
+        transform: none;
+    }
+
+    .message-alert {
+        margin-top: 1.5rem;
+        padding: 1rem;
+        border-radius: 8px;
+        font-size: 1.4rem;
+    }
+
+    .message-alert.success {
+        color: #10b981;
+    }
+
+    .message-alert.error {
+        color: #ef4444;
+    }
+
+    @media (max-width: 768px) {
+        .contact-grid {
+            grid-template-columns: 1fr;
+            gap: 4rem;
+        }
+
+        .contact-form-container {
+            padding: 2rem;
+        }
+    }
+</style> 

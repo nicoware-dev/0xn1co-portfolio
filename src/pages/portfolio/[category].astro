@@ -1,0 +1,77 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/header/Header.astro";
+import { mainMenu } from "../../components/data/menuData";
+import Footer from "../../components/Footer/Footer.astro";
+import Title from "../../components/atoms/Title.astro";
+import Card from "../../components/card-portfolio/CardPortfolio.astro";
+import { portafolioData, categoryTitles } from "../../components/data/portfolioData";
+
+export function getStaticPaths() {
+    return Object.keys(categoryTitles).map(category => ({
+        params: { category },
+    }));
+}
+
+const { category } = Astro.params;
+const projects = portafolioData.filter(project => project.category === category);
+const categoryTitle = categoryTitles[category as keyof typeof categoryTitles];
+---
+
+<Layout title={`${categoryTitle} | Portfolio | Nicolas Dominici`}>
+    <Header origin={mainMenu} />
+    <main class="pt-40 pb-20 px-4">
+        <div class="max-w-[var(--max-width)] mx-auto">
+            <div class="text-center mb-16">
+                <Title contenido={categoryTitle} />
+                <h2 class="subtitle">Projects Showcase</h2>
+                <a href="/portfolio" class="back-link">
+                    <iconify-icon icon="mdi:arrow-left" width="20" height="20" />
+                    Back to Categories
+                </a>
+            </div>
+            
+            <div class="portfolio-grid">
+                {projects.map((project) => (
+                    <Card {...project} />
+                ))}
+            </div>
+        </div>
+    </main>
+    <Footer />
+</Layout>
+
+<style>
+    .subtitle {
+        font-size: 2.4rem;
+        color: var(--primary-90);
+        margin-top: 1rem;
+    }
+
+    .back-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 1.6rem;
+        color: var(--accent);
+        margin-top: 1rem;
+        transition: all 0.3s ease;
+    }
+
+    .back-link:hover {
+        transform: translateX(-5px);
+    }
+
+    .portfolio-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 3rem;
+        margin: 4rem 0;
+    }
+
+    @media (max-width: 768px) {
+        .portfolio-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style> 

@@ -1,0 +1,147 @@
+# Modern Portfolio & Blog with Astro
+
+A modern, full-featured portfolio and blog template built with Astro. This template includes a responsive portfolio showcase, blog functionality, services section, and contact features - all with an elegant UI.
+
+![Portada](image-1.png)
+
+## Features
+
+- 📱 Fully Responsive Design
+- 💼 Portfolio Showcase
+- ✍️ Blog with Markdown Support
+- 🛠️ Services Section
+- 📬 Contact Form with API Integration
+- 🎨 Modern UI Components
+- 🚀 Optimized Performance
+- 📱 Social Media Integration
+
+## Table of Contents
+
+1. [Getting Started](#getting-started)
+2. [Project Structure](#project-structure)
+3. [Portfolio Data Format](#portfolio-data-format)
+4. [Blog Posts](#blog-posts)
+5. [Technologies Used](#technologies-used)
+6. [Environment Variables](#environment-variables)
+7. [Adding Icons](#adding-icons)
+8. [Components](#components)
+
+## Getting Started
+
+```bash
+# Clone the repository
+git clone [your-repo-url]
+
+# Install dependencies
+npm install
+
+# Run development server
+npm run dev
+```
+
+## Project Structure
+
+```
+src/
+├── components/
+│   ├── About/
+│   ├── card-portfolio/
+│   ├── hero/
+│   ├── skills/
+│   └── atoms/
+├── content/
+│   └── blog/
+├── pages/
+│   ├── api/
+│   ├── blog/
+│   └── services/
+├── styles/
+└── types/
+```
+
+## Portfolio Data Format
+
+Add portfolio items in `/src/data/portfolioData.js`:
+
+```typescript
+interface PortfolioItem {
+    imgSrc: string;
+    title: string;
+    skills: string[];
+    description: string;
+    demoURL?: string;
+    repoURL?: string;
+    anim?: string;
+    averageBrightness?: number;
+}
+```
+
+## Blog Posts
+
+Blog posts are written in Markdown format and stored in `src/content/blog/`. Each post should include frontmatter:
+
+```markdown
+---
+title: Your Post Title
+date: YYYY-MM-DD
+description: Brief description of your post
+---
+
+Your content here...
+```
+
+## Technologies Used
+
+- **Astro**: Modern static site generator
+- **React**: UI component library
+- **Tailwind CSS**: Utility-first CSS framework
+- **Markdown**: Blog content formatting
+- **TypeScript**: Type safety and better developer experience
+
+## Environment Variables
+
+Create a `.env` file in the root directory:
+
+```env
+# Required environment variables
+DATABASE_URL=your_database_url
+API_KEY=your_api_key
+```
+
+## Adding Icons
+
+We use Iconify for icons. Add the script to your HTML:
+
+```html
+<script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+```
+
+Usage example:
+
+```html
+<iconify-icon icon="logos:react" width="27" height="27"></iconify-icon>
+```
+
+## Components
+
+Key components included:
+
+- `Hero.astro`: Landing page hero section
+- `Portfolio.astro`: Portfolio showcase
+- `BlogHome.astro`: Blog listing component
+- `About.astro`: About section
+- `Skills.astro`: Skills showcase
+- `SocialIcons.astro`: Social media links
+- `CardPortfolio.astro`: Portfolio item card
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Author
+
+Nicolas Dominici
+
+## Support
+
+For support, email nicolasdominici@outlook.com or open an issue in the repository.

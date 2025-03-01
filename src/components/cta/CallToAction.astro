@@ -1,0 +1,84 @@
+---
+import Boton from '../atoms/Boton.astro';
+---
+
+<section class="cta-section">
+    <div class="max-w-[var(--max-width)] mx-auto px-4">
+        <div class="cta-container">
+            <h2>Ready to Transform Your Ideas into Reality?</h2>
+            <p>Let's collaborate to build innovative solutions that drive your business forward. Whether you need custom software, AI integration, or technical consultation, I'm here to help.</p>
+            
+            <div class="cta-buttons">
+                <Boton 
+                    href="https://forms.gle/NLQbWJYWZuYKcNEh9" 
+                    texto="Request a Quote" 
+                    class="primary"
+                    target="_blank"
+                />
+                <Boton 
+                    href="/contact" 
+                    texto="Contact Me" 
+                    class="secondary"
+                />
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .cta-section {
+        padding: 8rem 0;
+        background: var(--card-gradient);
+        border-top: 1px solid rgba(123, 74, 226, 0.2);
+        border-bottom: 1px solid rgba(123, 74, 226, 0.2);
+    }
+
+    .cta-container {
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    h2 {
+        font-size: 3.6rem;
+        font-weight: 700;
+        margin-bottom: 2rem;
+        background: var(--text-gradient);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    p {
+        font-size: 1.8rem;
+        color: var(--primary-90);
+        margin-bottom: 4rem;
+        line-height: 1.6;
+    }
+
+    .cta-buttons {
+        display: flex;
+        gap: 2rem;
+        justify-content: center;
+    }
+
+    @media (max-width: 768px) {
+        .cta-section {
+            padding: 6rem 0;
+        }
+
+        h2 {
+            font-size: 2.8rem;
+        }
+
+        p {
+            font-size: 1.6rem;
+        }
+
+        .cta-buttons {
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
+    }
+</style> 

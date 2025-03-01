@@ -1,0 +1,155 @@
+---
+import './card-portfolio.css';
+
+interface Props {
+	imgSrc: string;
+	title: string;
+	descripcion: string;
+	skills: string[];
+	demoURL: string;
+	repoURL: string;
+	anim?: string;
+	category?: string;
+}
+
+const {
+	imgSrc,
+	title,
+	descripcion,
+	skills,
+	demoURL,
+	repoURL,
+	anim = 'fade-up'
+} = Astro.props;
+---
+
+<article class={`card scroll-animate ${anim}`}>
+	<div class="card__image-container">
+		<img src={imgSrc} alt={title} loading="lazy" onerror="this.onerror=null; this.src='/img/placeholder-project.webp';" />
+		<div class="card__overlay">
+			<div class="card__actions">
+				<a href={demoURL} class="card__button" target="_blank" rel="noopener noreferrer">
+					<iconify-icon icon="mdi:eye" width="24" height="24" />
+					<span class="button-text">Live Demo</span>
+				</a>
+				<a href={repoURL} class="card__button" target="_blank" rel="noopener noreferrer">
+					<iconify-icon icon="mdi:github" width="24" height="24" />
+					<span class="button-text">Code</span>
+				</a>
+			</div>
+		</div>
+	</div>
+	<div class="card__content">
+		<h3>{title}</h3>
+		<p>{descripcion}</p>
+		<div class="card__skills">
+			{skills.map((skill) => (
+				<iconify-icon icon={skill} width="24" height="24" class="skill-icon" />
+			))}
+		</div>
+	</div>
+</article>
+
+<style>
+	.card {
+		background: var(--card-gradient);
+		border-radius: 16px;
+		overflow: hidden;
+		border: 1px solid rgba(123, 74, 226, 0.2);
+		transition: all 0.3s ease;
+	}
+
+	.card:hover {
+		transform: translateY(-5px);
+		border-color: var(--accent);
+	}
+
+	.card__image-container {
+		position: relative;
+		width: 100%;
+		aspect-ratio: 16/9;
+		overflow: hidden;
+	}
+
+	.card__image-container img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	.card__overlay {
+		position: absolute;
+		inset: 0;
+		background: rgba(0, 0, 0, 0.7);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		opacity: 0;
+		transition: all 0.3s ease;
+	}
+
+	.card:hover .card__overlay {
+		opacity: 1;
+	}
+
+	.card__actions {
+		display: flex;
+		gap: 1rem;
+		transform: translateY(20px);
+		transition: transform 0.3s ease;
+	}
+
+	.card:hover .card__actions {
+		transform: translateY(0);
+	}
+
+	.card__button {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		padding: 0.8rem 1.6rem;
+		background: var(--accent);
+		border-radius: 8px;
+		color: white;
+		font-size: 1.4rem;
+		transition: all 0.3s ease;
+	}
+
+	.card__button:hover {
+		transform: translateY(-2px);
+		box-shadow: var(--blue-glow);
+	}
+
+	.card__content {
+		padding: 2rem;
+	}
+
+	.card__content h3 {
+		font-size: 2rem;
+		font-weight: 600;
+		margin-bottom: 1rem;
+		color: var(--primary-100);
+	}
+
+	.card__content p {
+		font-size: 1.6rem;
+		color: var(--primary-90);
+		margin-bottom: 2rem;
+		line-height: 1.6;
+	}
+
+	.card__skills {
+		display: flex;
+		gap: 1rem;
+		flex-wrap: wrap;
+	}
+
+	.skill-icon {
+		color: var(--accent);
+		transition: transform 0.3s ease;
+	}
+
+	.skill-icon:hover {
+		transform: scale(1.2);
+	}
+</style>

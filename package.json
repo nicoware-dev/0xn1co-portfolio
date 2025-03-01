@@ -1,0 +1,53 @@
+{
+  "name": "portfolio",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "@astrojs/react": "^3.3.0",
+    "@astrojs/sitemap": "^3.1.4",
+    "@astrojs/tailwind": "^5.1.0",
+    "@astrojs/vercel": "^7.3.5",
+    "@hookform/resolvers": "^3.9.1",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "astro": "^4.6.1",
+    "next": "^15.0.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-hook-form": "^7.53.2",
+    "resend": "^4.0.1",
+    "sonner": "^1.7.0",
+    "tailwindcss": "^3.4.3",
+    "zod": "^3.23.8"
+  },
+  "description": "Nicolas Dominici's Portfolio",
+  "main": "index.astro",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/"
+  },
+  "keywords": [
+    "astro",
+    "frontend",
+    "portfolio",
+    "javascript",
+    "css",
+    "tailwind"
+  ],
+  "author": "Nicolas Dominici",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/"
+  },
+  "homepage": "https://github.com",
+  "devDependencies": {
+    "@types/node": "^22.10.1",
+    "typescript": "^5.7.2"
+  }
+}

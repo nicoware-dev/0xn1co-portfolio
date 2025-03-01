@@ -1,0 +1,55 @@
+---
+import { services } from './data/servicesData';
+
+interface Props {
+    service?: string;
+}
+
+const { service } = Astro.props;
+---
+
+<section class="quote-request py-20 bg-gradient-to-b from-transparent to-[rgba(123,74,226,0.1)]">
+    <div class="max-w-[var(--max-width)] mx-auto px-4">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl font-bold mb-4 bg-gradient-to-r from-[var(--primary-100)] to-[var(--accent)] bg-clip-text text-transparent">
+                Request a Quote
+            </h2>
+            <p class="text-[var(--primary-80)] text-lg max-w-2xl mx-auto">
+                Let's discuss your project requirements and create a tailored solution for your business
+            </p>
+        </div>
+
+        <form class="max-w-2xl mx-auto bg-[rgba(123,74,226,0.1)] p-8 rounded-2xl border border-[rgba(123,74,226,0.2)]">
+            <div class="grid gap-6 mb-6 md:grid-cols-2">
+                <div>
+                    <label class="block mb-2 text-lg font-medium text-[var(--primary-90)]">First Name</label>
+                    <input type="text" class="bg-[rgba(123,74,226,0.1)] border border-[rgba(123,74,226,0.2)] text-[var(--primary-90)] text-lg rounded-lg block w-full p-3" required />
+                </div>
+                <div>
+                    <label class="block mb-2 text-lg font-medium text-[var(--primary-90)]">Last Name</label>
+                    <input type="text" class="bg-[rgba(123,74,226,0.1)] border border-[rgba(123,74,226,0.2)] text-[var(--primary-90)] text-lg rounded-lg block w-full p-3" required />
+                </div>
+            </div>
+            <div class="mb-6">
+                <label class="block mb-2 text-lg font-medium text-[var(--primary-90)]">Email</label>
+                <input type="email" class="bg-[rgba(123,74,226,0.1)] border border-[rgba(123,74,226,0.2)] text-[var(--primary-90)] text-lg rounded-lg block w-full p-3" required />
+            </div>
+            <div class="mb-6">
+                <label class="block mb-2 text-lg font-medium text-[var(--primary-90)]">Service Type</label>
+                <select class="bg-[rgba(123,74,226,0.1)] border border-[rgba(123,74,226,0.2)] text-[var(--primary-90)] text-lg rounded-lg block w-full p-3" required>
+                    <option value="" disabled selected={!service}>Select a service</option>
+                    {services.map(s => (
+                        <option value={s.slug} selected={s.slug === service}>{s.title}</option>
+                    ))}
+                </select>
+            </div>
+            <div class="mb-6">
+                <label class="block mb-2 text-lg font-medium text-[var(--primary-90)]">Project Description</label>
+                <textarea rows="4" class="bg-[rgba(123,74,226,0.1)] border border-[rgba(123,74,226,0.2)] text-[var(--primary-90)] text-lg rounded-lg block w-full p-3" required></textarea>
+            </div>
+            <button type="submit" class="w-full bg-[var(--accent)] hover:bg-[var(--accent-dark)] text-white font-medium rounded-lg text-lg px-5 py-4 text-center transition-colors duration-300">
+                Request Quote
+            </button>
+        </form>
+    </div>
+</section> 

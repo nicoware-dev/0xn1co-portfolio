@@ -1,0 +1,43 @@
+---
+import About from '../components/About/About.astro';
+import BlogHome from '../components/BlogHome.astro';
+import { mainMenu } from '../components/data/menuData';
+import Footer from '../components/Footer/Footer.astro';
+import Header from '../components/header/Header.astro';
+import Hero from '../components/hero/Hero.astro';
+import Portfolio from '../components/Portfolio.astro';
+import Skills from '../components/skills/Skills.astro';
+import Testimonials from '../components/Testimonials.astro';
+import Layout from '../layouts/Layout.astro';
+import CallToAction from '../components/cta/CallToAction.astro';
+import ProjectsOverview from '../components/ProjectsOverview.astro';
+import ServicesOverview from '../components/ServicesOverview.astro';
+---
+
+<Layout title="Nicolas Dominici | Software Engineer">
+	<div class="app-container">
+		<Header origin={mainMenu} />
+		<main>
+			<Hero />
+			<About />
+			<Skills />
+			<ServicesOverview />
+			<ProjectsOverview />
+			<CallToAction />
+			<BlogHome />
+		</main>
+		<Footer/>
+	</div>
+</Layout>
+
+<style>
+	.app-container {
+		position: relative;
+		min-height: 100vh;
+		width: 100%;
+	}
+
+	main {
+		width: 100%;
+	}
+</style>

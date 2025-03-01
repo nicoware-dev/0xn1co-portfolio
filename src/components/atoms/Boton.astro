@@ -1,0 +1,66 @@
+---
+interface Props {
+    href: string;
+    texto: string;
+    class?: 'primary' | 'secondary';
+}
+
+const { href, texto, class: className = 'primary' } = Astro.props;
+---
+
+<a href={href} class={`button ${className}`}>
+    <span>{texto}</span>
+</a>
+
+<style>
+    .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1.2rem 2.4rem;
+        border-radius: 8px;
+        font-size: 1.6rem;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        min-width: 120px;
+        text-align: center;
+        white-space: nowrap;
+        position: relative;
+        z-index: 20;
+    }
+
+    .primary {
+        background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+        color: var(--white);
+        border: none;
+    }
+
+    .secondary {
+        background: transparent;
+        border: 2px solid var(--accent);
+        color: var(--accent);
+    }
+
+    .button:hover {
+        transform: translateY(-2px);
+    }
+
+    .primary:hover {
+        box-shadow: 0 4px 12px rgba(var(--accent-rgb), 0.3);
+    }
+
+    .secondary:hover {
+        background: rgba(var(--accent-rgb), 0.1);
+    }
+
+    @media (max-width: 768px) {
+        .button {
+            padding: 1rem 1.5rem;
+            font-size: 1.4rem;
+            min-width: 120px;
+            flex: 0 1 auto;
+            position: relative;
+            z-index: 20;
+        }
+    }
+</style>

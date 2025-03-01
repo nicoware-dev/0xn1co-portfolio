@@ -1,0 +1,78 @@
+---
+import Title from './atoms/Title.astro';
+---
+
+<section id="testimonials" class="py-20 w-full">
+    <div class="max-w-[var(--max-width)] mx-auto px-4">
+        <Title contenido="Client Testimonials" />
+        
+        <div class="grid md:grid-cols-3 gap-8 mt-12">
+            <div class="testimonial-card">
+                <p class="quote">"Working with Nicolas was a game-changer for our company. His ability to integrate AI solutions into our existing systems significantly improved our efficiency. He is a true problem solver who delivers exceptional results."</p>
+                <div class="author">
+                    <strong>Alex Martinez</strong>
+                    <span>COO at InnovateTech</span>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <p class="quote">"Nicolas's expertise in both business and technology is unparalleled. He helped us navigate complex blockchain implementation with ease, and his strategic insights were invaluable."</p>
+                <div class="author">
+                    <strong>Sarah Lee</strong>
+                    <span>Head of Operations at SecureChain</span>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <p class="quote">"His approach to solving problems is methodical and innovative. Nicolas not only developed a custom software solution for us but also provided guidance that helped us optimize our processes."</p>
+                <div class="author">
+                    <strong>David Brown</strong>
+                    <span>CEO at Global Manufacturing Inc.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .testimonial-card {
+        background: rgba(123, 74, 226, 0.1);
+        border-radius: 16px;
+        padding: 2.5rem;
+        border: 1px solid rgba(123, 74, 226, 0.2);
+        transition: transform 0.3s ease;
+    }
+
+    .testimonial-card:hover {
+        transform: translateY(-5px);
+        background: rgba(123, 74, 226, 0.15);
+    }
+
+    .quote {
+        font-size: 1.6rem;
+        line-height: 1.6;
+        color: var(--primary-90);
+        margin-bottom: 2rem;
+        font-style: italic;
+    }
+
+    .author {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .author strong {
+        font-size: 1.8rem;
+        color: var(--primary-100);
+        background: var(--text-gradient);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .author span {
+        font-size: 1.4rem;
+        color: var(--primary-80);
+    }
+</style> 

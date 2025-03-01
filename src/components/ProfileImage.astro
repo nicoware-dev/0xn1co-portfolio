@@ -1,0 +1,50 @@
+---
+interface Props {
+    size?: 'sm' | 'md' | 'lg' | 'xl';
+    className?: string;
+}
+
+const { size = 'md', className = '' } = Astro.props;
+
+const sizes = {
+    sm: 'w-10 h-10',
+    md: 'w-16 h-16',
+    lg: 'w-24 h-24',
+    xl: 'w-96 h-96'
+};
+
+---
+
+<div class={`profile-image ${sizes[size]} ${className}`}>
+    <img
+        src="/img/profile.png"
+        alt="Nicolas Dominici"
+        class="w-full h-full object-cover"
+        width={384}
+        height={384}
+    />
+</div>
+
+<style>
+    .profile-image {
+        border-radius: 50%;
+        overflow: hidden;
+        background: linear-gradient(45deg, var(--primary) 0%, var(--secondary) 100%);
+        padding: 2px;
+        max-width: 100%;
+    }
+
+    .profile-image img {
+        border-radius: 50%;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+
+    @media (max-width: 768px) {
+        .profile-image.xl {
+            width: 24rem;
+            height: 24rem;
+        }
+    }
+</style> 

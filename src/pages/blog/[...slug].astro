@@ -1,0 +1,289 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/header/Header.astro';
+import { mainMenu } from '../../components/data/menuData';
+import Footer from '../../components/Footer/Footer.astro';
+import FormattedDate from '../../components/FormattedDate.astro';
+
+// Add this line to enable static generation
+export const prerender = true;
+
+interface Props {
+	entry: CollectionEntry<'blog'>;
+}
+
+export async function getStaticPaths() {
+	try {
+		const posts = await getCollection('blog');
+		console.log('Found posts:', posts.length);
+		
+		if (posts.length === 0) {
+			console.error('No posts found in collection');
+			return [];
+		}
+
+		const paths = posts.map((post) => ({
+			params: { slug: post.slug },
+			props: { entry: post }
+		}));
+
+		console.log('Generated paths:', paths.map(p => ({
+			slug: p.params.slug,
+			hasEntry: !!p.props.entry
+		})));
+
+		return paths;
+	} catch (error) {
+		console.error('Error in getStaticPaths:', error);
+		return [];
+	}
+}
+
+const { entry } = Astro.props;
+
+if (!entry) {
+	return Astro.redirect('/404');
+}
+
+const { Content } = await entry.render();
+---
+
+<Layout title={entry.data.title}>
+	<Header origin={mainMenu} />
+	<main class="pt-40 pb-20 px-4">
+		<article class="max-w-[var(--max-width)] mx-auto">
+			{entry.data.heroImage && (
+				<div class="hero-image-container mb-12">
+					<img 
+						src={entry.data.heroImage} 
+						alt={entry.data.title}
+						class="hero-image"
+					/>
+				</div>
+			)}
+			
+			<div class="article-container">
+				<div class="article-header">
+					<h1>{entry.data.title}</h1>
+					<div class="article-meta">
+						<FormattedDate date={entry.data.pubDate} clase="text-gray-400" />
+						{entry.data.updatedDate && (
+							<div class="update-date">
+								Last Update <FormattedDate date={entry.data.updatedDate} clase="text-gray-400" />
+							</div>
+						)}
+					</div>
+				</div>
+				
+				<div class="article-content">
+					<Content />
+				</div>
+			</div>
+		</article>
+	</main>
+	<Footer />
+</Layout>
+
+<style is:global>
+	.hero-image-container {
+		width: 100%;
+		height: 400px;
+		overflow: hidden;
+		border-radius: 16px;
+		box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+	}
+
+	.hero-image {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	.article-container {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 0 20px;
+	}
+
+	.article-header {
+		text-align: center;
+		margin-bottom: 4rem;
+	}
+
+	.article-header h1 {
+		font-size: 4rem;
+		font-weight: 700;
+		background: var(--text-gradient);
+		-webkit-background-clip: text;
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
+		margin-bottom: 1.5rem;
+		line-height: 1.2;
+	}
+
+	.article-meta {
+		display: flex;
+		justify-content: center;
+		gap: 2rem;
+		color: var(--primary-80);
+		font-size: 1.6rem;
+	}
+
+	.article-content {
+		font-size: 1.8rem;
+		line-height: 1.8;
+		color: var(--primary-90);
+	}
+
+	/* Estilos para el contenido del artículo */
+	.article-content h2 {
+		font-size: 3.2rem;
+		font-weight: 600;
+		color: var(--primary-100);
+		margin: 4rem 0 2rem;
+	}
+
+	.article-content h3 {
+		font-size: 2.4rem;
+		font-weight: 600;
+		color: var(--primary-100);
+		margin: 3rem 0 1.5rem;
+	}
+
+	.article-content p {
+		margin-bottom: 2rem;
+		font-size: 1.8rem;
+		line-height: 1.8;
+	}
+
+	.article-content img {
+		width: 100%;
+		max-width: 900px;
+		margin: 3rem auto;
+		border-radius: 12px;
+		display: block;
+	}
+
+	.article-content pre {
+		background: var(--card-gradient);
+		padding: 2rem;
+		border-radius: 12px;
+		overflow-x: auto;
+		margin: 2rem 0;
+		border: 1px solid rgba(123, 74, 226, 0.2);
+	}
+
+	.article-content code {
+		font-family: 'Fira Code', monospace;
+		font-size: 1.6rem;
+		color: var(--primary-100);
+	}
+
+	.article-content ul,
+	.article-content ol {
+		margin: 2rem 0;
+		padding-left: 2rem;
+	}
+
+	.article-content li {
+		margin: 1rem 0;
+		font-size: 1.8rem;
+	}
+
+	/* Responsive Design */
+	@media (max-width: 1200px) {
+		.article-container {
+			max-width: 900px;
+		}
+	}
+
+	@media (max-width: 768px) {
+		.hero-image-container {
+			height: 300px;
+		}
+
+		.article-header h1 {
+			font-size: 3.2rem;
+		}
+
+		.article-content h2 {
+			font-size: 2.8rem;
+		}
+
+		.article-content h3 {
+			font-size: 2.2rem;
+		}
+
+		.article-content p,
+		.article-content li {
+			font-size: 1.6rem;
+		}
+	}
+
+	@media (max-width: 480px) {
+		.hero-image-container {
+			height: 200px;
+		}
+
+		.article-header h1 {
+			font-size: 2.8rem;
+		}
+
+		.article-meta {
+			flex-direction: column;
+			gap: 1rem;
+		}
+
+		.article-content pre {
+			padding: 1.5rem;
+		}
+
+		.article-content code {
+			font-size: 1.4rem;
+		}
+	}
+
+	.article-content table {
+		width: 100%;
+		border-collapse: collapse;
+		margin: 2rem 0;
+		font-size: 1.6rem;
+		background: var(--card-gradient);
+		border-radius: 12px;
+		overflow: hidden;
+		border: 1px solid rgba(123, 74, 226, 0.2);
+	}
+
+	.article-content th,
+	.article-content td {
+		padding: 1.5rem;
+		text-align: left;
+		border-bottom: 1px solid rgba(123, 74, 226, 0.2);
+	}
+
+	.article-content th {
+		background: rgba(123, 74, 226, 0.1);
+		font-weight: 600;
+		color: var(--primary-100);
+	}
+
+	.article-content td {
+		color: var(--primary-90);
+	}
+
+	.article-content tr:last-child td {
+		border-bottom: none;
+	}
+
+	@media (max-width: 768px) {
+		.article-content table {
+			font-size: 1.4rem;
+		}
+		
+		.article-content th,
+		.article-content td {
+			padding: 1rem;
+		}
+	}
+</style>

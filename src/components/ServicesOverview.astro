@@ -1,0 +1,103 @@
+---
+import Title from './atoms/Title.astro';
+import { services } from './data/servicesData';
+---
+
+<section class="services-overview py-20">
+    <div class="max-w-[var(--max-width)] mx-auto px-4">
+        <div class="text-center mb-16">
+            <Title contenido="Services" />
+            <p class="section-subtitle">Empowering Your Business Through Technology</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+            {services.map(service => (
+                <a href={`/services/${service.slug}`} class="service-card">
+                    <div class="service-icon">
+                        <iconify-icon icon={service.icon} width="40" height="40" />
+                    </div>
+                    <h3 class="service-title">{service.title}</h3>
+                    <p class="service-description">{service.description}</p>
+                    <ul class="service-features">
+                        {service.features.map(feature => (
+                            <li>{feature}</li>
+                        ))}
+                    </ul>
+                    <div class="learn-more">
+                        <span>Learn More</span>
+                        <iconify-icon icon="mdi:arrow-right" width="20" height="20" />
+                    </div>
+                </a>
+            ))}
+        </div>
+    </div>
+</section>
+
+<style>
+    .section-subtitle {
+        font-size: 1.8rem;
+        color: var(--primary-80);
+        max-width: 600px;
+        margin: 1rem auto 0;
+    }
+
+    .service-card {
+        background: rgba(123, 74, 226, 0.1);
+        border-radius: 16px;
+        padding: 3rem;
+        transition: all 0.3s ease;
+        border: 1px solid rgba(123, 74, 226, 0.2);
+    }
+
+    .service-card:hover {
+        transform: translateY(-5px);
+        background: var(--hover-gradient);
+        border-color: var(--accent);
+    }
+
+    .service-icon {
+        color: var(--accent);
+        margin-bottom: 2rem;
+    }
+
+    .service-title {
+        font-size: 2.2rem;
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+        background: var(--text-gradient);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .service-description {
+        font-size: 1.6rem;
+        line-height: 1.6;
+        color: var(--primary-90);
+        margin-bottom: 2rem;
+    }
+
+    .service-features {
+        list-style: disc;
+        padding-left: 2rem;
+        margin-bottom: 2rem;
+        color: var(--primary-80);
+        font-size: 1.6rem;
+    }
+
+    .service-features li {
+        margin-bottom: 0.5rem;
+    }
+
+    .learn-more {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: var(--accent);
+        transition: transform 0.3s ease;
+    }
+
+    .service-card:hover .learn-more {
+        transform: translateX(5px);
+    }
+</style> 

@@ -1,0 +1,137 @@
+---
+import Title from '../atoms/Title.astro';
+
+const techStack = [
+    { name: 'HTML', icon: 'vscode-icons:file-type-html' },
+    { name: 'CSS', icon: 'vscode-icons:file-type-css' },
+    { name: 'Tailwind', icon: 'logos:tailwindcss-icon' },
+    { name: 'React', icon: 'logos:react' },
+    { name: 'Angular', icon: 'logos:angular-icon' },
+    { name: 'JavaScript', icon: 'logos:javascript' },
+    { name: 'TypeScript', icon: 'logos:typescript-icon' },
+    { name: 'Python', icon: 'logos:python' },
+    { name: 'Solidity', icon: 'logos:solidity' },
+    { name: 'Ethereum', icon: 'logos:ethereum' },
+    { 
+        name: 'n8n', 
+        isImage: true,
+        src: '/assets/n8n.svg'
+    },
+    { name: 'Node.js', icon: 'logos:nodejs-icon' },
+    { name: 'Docker', icon: 'logos:docker-icon' },
+    { name: 'MongoDB', icon: 'logos:mongodb-icon' }
+];
+---
+
+<section id="skills" class="py-20">
+    <div class="max-w-[var(--max-width)] mx-auto px-4">
+        <div class="text-center mb-16">
+            <Title contenido="Technical Expertise" />
+            <p class="section-subtitle">Technologies and tools I work with</p>
+        </div>
+
+        <div class="tech-grid">
+            {techStack.map(tech => (
+                <div class="tech-card">
+                    <div class="icon-wrapper">
+                        {tech.isImage ? (
+                            <img src={tech.src} alt={tech.name} />
+                        ) : (
+                            <iconify-icon icon={tech.icon} width="48" height="48" />
+                        )}
+                    </div>
+                    <span class="tech-name">{tech.name}</span>
+                </div>
+            ))}
+        </div>
+    </div>
+</section>
+
+<style>
+    .section-subtitle {
+        font-size: 1.8rem;
+        color: var(--primary-80);
+        margin-top: 1rem;
+    }
+
+    .tech-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 2rem;
+        justify-items: center;
+    }
+
+    .tech-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        padding: 2rem;
+        background: rgba(123, 74, 226, 0.1);
+        border: 1px solid rgba(123, 74, 226, 0.2);
+        border-radius: 16px;
+        transition: all 0.3s ease;
+        width: 100%;
+        max-width: 140px;
+        cursor: pointer;
+    }
+
+    .tech-card:hover {
+        transform: translateY(-5px);
+        background: var(--hover-gradient);
+        border-color: var(--accent);
+    }
+
+    .icon-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 64px;
+        height: 64px;
+        transition: transform 0.3s ease;
+        opacity: 0.8;
+    }
+
+    .tech-card:hover .icon-wrapper {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+
+    .tech-name {
+        font-size: 1.4rem;
+        color: var(--primary-90);
+        text-align: center;
+        font-family: 'Fira Code', monospace;
+    }
+
+    .icon-wrapper img {
+        width: 48px;
+        height: 48px;
+        color: var(--primary-90);
+    }
+
+    .tech-card:hover .icon-wrapper img {
+        color: var(--accent);
+    }
+
+    @media (max-width: 768px) {
+        .tech-grid {
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .tech-card {
+            padding: 1.5rem;
+            max-width: 120px;
+        }
+
+        .icon-wrapper img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .tech-name {
+            font-size: 1.2rem;
+        }
+    }
+</style>

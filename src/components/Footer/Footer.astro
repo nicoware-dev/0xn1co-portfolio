@@ -1,0 +1,82 @@
+---
+import Logo from '../Logo.astro';
+import SocialIcons from '../SocialIcons.astro';
+import { NewsletterForm } from "../NewsletterForm";
+import { Toaster } from 'sonner';
+import './Footer.css';
+---
+
+<footer class="footer">
+	<div class="footer__container max-w-[var(--max-width)] mx-auto">
+		<div class="footer__main">
+			<div class="footer__brand">
+				<Logo name="Nicolas Dominici" />
+				<p class="footer__description">
+					Engineering innovative solutions for a digital world.
+				</p>
+				<SocialIcons width="23" height="23" />
+			</div>
+
+			<div class="footer__links">
+				<div class="footer__section">
+					<h3>Quick Links</h3>
+					<ul>
+						<li><a href="/">Home</a></li>
+						<li><a href="/about">About Me</a></li>
+						<li><a href="/services">Services</a></li>
+						<li><a href="/portfolio">Portfolio</a></li>
+						<li><a href="/blog">Blog</a></li>
+						<li><a href="/contact">Contact</a></li>
+					</ul>
+				</div>
+
+				<div class="footer__section">
+					<h3>Social Media</h3>
+					<ul>
+						<li>
+							<a href="https://linkedin.com/in/nicolasdominici/" target="_blank" rel="noopener">
+								<iconify-icon icon="mdi:linkedin" width="20" height="20"/>
+								LinkedIn
+							</a>
+						</li>
+						<li>
+							<a href="mailto:nicolasdominici@outlook.com">
+								<iconify-icon icon="fluent:mail-28-regular" width="20" height="20"/>
+								Email
+							</a>
+						</li>
+						<li>
+							<a href="https://t.me/n1c0_dev" target="_blank" rel="noopener">
+								<iconify-icon icon="ic:baseline-telegram" width="20" height="20"/>
+								Telegram
+							</a>
+						</li>
+						<li>
+							<a href="https://discord.com/users/0xn1c0" target="_blank" rel="noopener">
+								<iconify-icon icon="ic:baseline-discord" width="20" height="20"/>
+								Discord
+							</a>
+						</li>
+					</ul>
+				</div>
+
+				<div class="footer__section">
+					<h3>Newsletter</h3>
+					<p class="newsletter-description">
+						Stay updated with the latest insights and projects.
+					</p>
+					<NewsletterForm client:load />
+				</div>
+			</div>
+		</div>
+
+		<div class="footer__bottom">
+			<p class="footer__copyright">© 2024 Nicolas Dominici. All rights reserved.</p>
+			<div class="footer__legal">
+				<a href="/privacy">Privacy Policy</a>
+				<a href="/terms">Terms of Service</a>
+			</div>
+		</div>
+	</div>
+	<Toaster client:load position="top-right" expand={false} richColors closeButton />
+</footer>
