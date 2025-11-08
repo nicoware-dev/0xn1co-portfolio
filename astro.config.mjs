@@ -10,6 +10,6 @@ export default defineConfig({
     webAnalytics: {
       enabled: true,
     },
-    nodeVersion: '20.x'
+    runtime: 'nodejs20.x'
   }),
 });
