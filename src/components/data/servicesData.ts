@@ -2,6 +2,124 @@ import type { ServiceDetail } from '../../types';
 
 export const services: ServiceDetail[] = [
     {
+        slug: 'ai-automation',
+        icon: "mdi:robot",
+        title: "AI Automation and Integration",
+        description: "Unlock the potential of AI to optimize your workflows, save time, and reduce costs. From chatbots to predictive analytics, we integrate intelligent solutions that empower your business to stay ahead in a competitive landscape.",
+        features: [
+            "AI Chatbots and Virtual Assistants",
+            "Process Automation",
+            "Data Analysis and Insights"
+        ],
+        categories: [
+            {
+                title: "Agentic Systems & Orchestration",
+                description: "Design and deploy multi‑agent systems, tool‑enabled workflows, retrieval‑augmented pipelines, and robust orchestration using platforms like n8n.",
+                deliverables: [
+                    "Architecture and system design documentation",
+                    "Orchestrated workflows (n8n) with error handling and retries",
+                    "Tool registry and capability routing",
+                    "Observability dashboards and runbooks"
+                ],
+                outcomes: [
+                    "Increased autonomy and throughput",
+                    "Reduced manual operations and handoffs",
+                    "Reproducible, monitorable workflows"
+                ],
+                pricing: [
+                    {
+                        name: "Pilot",
+                        price: "$5,000–$12,000",
+                        description: "Scoped PoC with 1–2 agent workflows"
+                    },
+                    {
+                        name: "Production",
+                        price: "$15,000–$35,000",
+                        description: "Hardened system with monitoring and handoffs"
+                    }
+                ]
+            },
+            {
+                title: "AI Chatbots and Virtual Assistants",
+                description: "Develop AI-driven chatbots to handle customer queries, sales support, or internal assistance. Our bots are tailored to meet your needs, using NLP (Natural Language Processing) for human-like interactions.",
+                deliverables: [
+                    "Fully functional chatbot integrated with platforms like WhatsApp or Slack",
+                    "Analytics to track user interactions and performance",
+                    "Training for employees to manage and improve the chatbot"
+                ],
+                outcomes: [
+                    "Provide 24/7 support without increasing staff costs",
+                    "Improve customer engagement with instant responses",
+                    "Boost sales through proactive customer interactions"
+                ],
+                pricing: [
+                    {
+                        name: "Basic Plan",
+                        price: "$3,000–$5,000",
+                        description: "Rule-based bots"
+                    },
+                    {
+                        name: "Advanced Plan",
+                        price: "$7,000–$15,000",
+                        description: "AI-powered, multi-channel bots"
+                    }
+                ]
+            },
+            {
+                title: "Process Automation",
+                description: "Automate repetitive tasks, such as data entry, invoicing, and reporting, with advanced Robotic Process Automation (RPA) tools. Save time and eliminate errors by streamlining workflows.",
+                deliverables: [
+                    "Custom automation scripts tailored to specific workflows",
+                    "Workflow documentation and process blueprints",
+                    "Employee training to manage automation systems"
+                ],
+                outcomes: [
+                    "Save significant time on repetitive tasks",
+                    "Reduce operational costs",
+                    "Ensure accuracy and consistency in processes"
+                ],
+                pricing: [
+                    {
+                        name: "Single Process",
+                        price: "$5,000–$10,000",
+                        description: "Single Process Automation"
+                    },
+                    {
+                        name: "Full Workflow",
+                        price: "$15,000–$25,000",
+                        description: "Full Workflow Optimization"
+                    }
+                ]
+            },
+            {
+                title: "Data Analysis and Insights",
+                description: "Leverage AI to uncover patterns, trends, and opportunities in your data. From customer segmentation to predictive analytics, our tools provide actionable insights.",
+                deliverables: [
+                    "Custom dashboards and visualizations",
+                    "Data pipelines for seamless integration",
+                    "Predictive models to support decision-making"
+                ],
+                outcomes: [
+                    "Make informed business decisions backed by data",
+                    "Enhance marketing campaigns with targeted strategies",
+                    "Identify and capitalize on growth opportunities"
+                ],
+                pricing: [
+                    {
+                        name: "Basic Analysis",
+                        price: "$3,000–$7,000",
+                        description: "Single dataset analysis"
+                    },
+                    {
+                        name: "Advanced Analytics",
+                        price: "$10,000–$20,000",
+                        description: "Full-scale analytics solutions"
+                    }
+                ]
+            }
+        ]
+    },
+    {
         slug: 'custom-software-development',
         icon: "mdi:code-braces",
         title: "Custom Software Development",
@@ -92,97 +210,6 @@ export const services: ServiceDetail[] = [
                         name: "Advanced Plan",
                         price: "$5,000–$15,000",
                         description: "API suite and complex integrations"
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        slug: 'ai-automation',
-        icon: "mdi:robot",
-        title: "AI Automation and Integration",
-        description: "Unlock the potential of AI to optimize your workflows, save time, and reduce costs. From chatbots to predictive analytics, we integrate intelligent solutions that empower your business to stay ahead in a competitive landscape.",
-        features: [
-            "AI Chatbots and Virtual Assistants",
-            "Process Automation",
-            "Data Analysis and Insights"
-        ],
-        categories: [
-            {
-                title: "AI Chatbots and Virtual Assistants",
-                description: "Develop AI-driven chatbots to handle customer queries, sales support, or internal assistance. Our bots are tailored to meet your needs, using NLP (Natural Language Processing) for human-like interactions.",
-                deliverables: [
-                    "Fully functional chatbot integrated with platforms like WhatsApp or Slack",
-                    "Analytics to track user interactions and performance",
-                    "Training for employees to manage and improve the chatbot"
-                ],
-                outcomes: [
-                    "Provide 24/7 support without increasing staff costs",
-                    "Improve customer engagement with instant responses",
-                    "Boost sales through proactive customer interactions"
-                ],
-                pricing: [
-                    {
-                        name: "Basic Plan",
-                        price: "$3,000–$5,000",
-                        description: "Rule-based bots"
-                    },
-                    {
-                        name: "Advanced Plan",
-                        price: "$7,000–$15,000",
-                        description: "AI-powered, multi-channel bots"
-                    }
-                ]
-            },
-            {
-                title: "Process Automation",
-                description: "Automate repetitive tasks, such as data entry, invoicing, and reporting, with advanced Robotic Process Automation (RPA) tools. Save time and eliminate errors by streamlining workflows.",
-                deliverables: [
-                    "Custom automation scripts tailored to specific workflows",
-                    "Workflow documentation and process blueprints",
-                    "Employee training to manage automation systems"
-                ],
-                outcomes: [
-                    "Save significant time on repetitive tasks",
-                    "Reduce operational costs",
-                    "Ensure accuracy and consistency in processes"
-                ],
-                pricing: [
-                    {
-                        name: "Single Process",
-                        price: "$5,000–$10,000",
-                        description: "Single Process Automation"
-                    },
-                    {
-                        name: "Full Workflow",
-                        price: "$15,000–$25,000",
-                        description: "Full Workflow Optimization"
-                    }
-                ]
-            },
-            {
-                title: "Data Analysis and Insights",
-                description: "Leverage AI to uncover patterns, trends, and opportunities in your data. From customer segmentation to predictive analytics, our tools provide actionable insights.",
-                deliverables: [
-                    "Custom dashboards and visualizations",
-                    "Data pipelines for seamless integration",
-                    "Predictive models to support decision-making"
-                ],
-                outcomes: [
-                    "Make informed business decisions backed by data",
-                    "Enhance marketing campaigns with targeted strategies",
-                    "Identify and capitalize on growth opportunities"
-                ],
-                pricing: [
-                    {
-                        name: "Basic Analysis",
-                        price: "$3,000–$7,000",
-                        description: "Single dataset analysis"
-                    },
-                    {
-                        name: "Advanced Analytics",
-                        price: "$10,000–$20,000",
-                        description: "Full-scale analytics solutions"
                     }
                 ]
             }

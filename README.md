@@ -1,6 +1,6 @@
-# Modern Portfolio & Blog with Astro
+# AI Automation & Agentic Systems Portfolio (Astro)
 
-A modern, full-featured portfolio and blog template built with Astro. This template includes a responsive portfolio showcase, blog functionality, services section, and contact features - all with an elegant UI.
+Personal portfolio focused on AI Automation, agentic systems, and intelligent workflow orchestration. Built with Astro and React, it includes a portfolio showcase, services oriented to AI automation (n8n, multi‑agent/LLM pipelines), and a blog.
 
 ![Portada](image-1.png)
 
@@ -15,6 +15,15 @@ A modern, full-featured portfolio and blog template built with Astro. This templ
 - 🚀 Optimized Performance
 - 📱 Social Media Integration
 
+## Highlights
+
+- 🏆 Seiling Buidlbox — 1st Prize (Tooling & Infrastructure), SEI AI/Accelathon
+- 🏆 Hive Fi — 1st Prize (Sozu Virtual AI Hack)
+- 🏆 AIgentlayer — 1st Prize (Gaia’s Autonomous Hackathon)
+- ⚙️ Production‑ready n8n automations with robust error handling and retries
+- 🤖 Agentic multi‑LLM workflows with tool use, routing, and RAG
+- 🗃️ Vector/knowledge integrations: Supabase, Qdrant, Pinecone, Neo4j
+
 ## Table of Contents
 
 1. [Getting Started](#getting-started)
@@ -25,12 +34,13 @@ A modern, full-featured portfolio and blog template built with Astro. This templ
 6. [Environment Variables](#environment-variables)
 7. [Adding Icons](#adding-icons)
 8. [Components](#components)
+9. [Adding Projects](#adding-projects)
 
 ## Getting Started
 
 ```bash
 # Clone the repository
-git clone [your-repo-url]
+git clone https://github.com/nicoware-dev/0xn1co-portfolio
 
 # Install dependencies
 npm install
@@ -61,7 +71,7 @@ src/
 
 ## Portfolio Data Format
 
-Add portfolio items in `/src/data/portfolioData.js`:
+Add portfolio items in `src/components/data/portfolioData.ts`:
 
 ```typescript
 interface PortfolioItem {
@@ -75,6 +85,13 @@ interface PortfolioItem {
     averageBrightness?: number;
 }
 ```
+
+## Adding Projects
+
+- Add a new object to `portafolioData` in `src/components/data/portfolioData.ts`
+- Use category `"ai"` for AI/automation work to surface it first across the site
+- Add an image under `public/assets/projects/` and reference it in `PROJECT_IMAGES`
+- Example: Seiling Buidlbox is showcased in the AI category with the award note
 
 ## Blog Posts
 
@@ -97,6 +114,8 @@ Your content here...
 - **Tailwind CSS**: Utility-first CSS framework
 - **Markdown**: Blog content formatting
 - **TypeScript**: Type safety and better developer experience
+- **n8n**: Workflow orchestration and automation
+- **LLM APIs**: OpenAI, Anthropic, Gemini, DeepSeek, Ollama
 
 ## Environment Variables
 

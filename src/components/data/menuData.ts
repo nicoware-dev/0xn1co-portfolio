@@ -6,6 +6,12 @@ export const mainMenu = [
         content: "Home"
     },
     {
+        title: "Request a Quote",
+        url: "https://forms.gle/Qz6YfDwRazVcU8Vo8",
+        icon: "mdi:clipboard-text-outline",
+        content: "Request a Quote"
+    },
+    {
         title: "About",
         url: "/about",
         icon: "mdi:account",

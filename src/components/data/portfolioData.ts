@@ -1,32 +1,32 @@
 import type { PortfolioItem } from '../../types';
 
 export const categoryTitles = {
-    websites: "Websites & Frontend",
-    games: "Games",
-    mobile: "Mobile Apps",
     ai: "AI & Automations",
+    websites: "Websites & Frontend",
     fullstack: "Full-Stack & Backend",
-    blockchain: "Blockchain & Web3"
+    blockchain: "Blockchain & Web3",
+    mobile: "Mobile Apps",
+    games: "Games"
 };
 
 // Update category descriptions
 export const categoryDescriptions = {
+    ai: "Agentic workflows, n8n automations, multi‑LLM systems, and data‑aware tools.",
     websites: "A collection of responsive websites and modern web interfaces with intuitive designs and seamless user experiences.",
-    games: "Browser-based games featuring creative visuals, interactive gameplay, and smooth animations.",
-    mobile: "Mobile applications for Android and iOS, built with cross-platform technologies and optimized for performance.",
-    ai: "Projects showcasing intelligent tools and systems powered by AI, automation, and data-driven insights.",
     fullstack: "Comprehensive web applications with robust backend systems, scalable APIs, and dynamic integrations.",
-    blockchain: "Decentralized applications, smart contract projects, and blockchain-based tools for the Web3 ecosystem."
+    blockchain: "Decentralized applications, smart contract projects, and blockchain-based tools for the Web3 ecosystem.",
+    mobile: "Mobile applications for Android and iOS, built with cross-platform technologies and optimized for performance.",
+    games: "Browser-based games featuring creative visuals, interactive gameplay, and smooth animations."
 };
 
 // Update category icons
 export const categoryIcons = {
-    websites: "mdi:web",
-    games: "mdi:gamepad-variant",
-    mobile: "mdi:cellphone",
     ai: "mdi:robot",
+    websites: "mdi:web",
     fullstack: "mdi:database",
-    blockchain: "mdi:cube-outline"
+    blockchain: "mdi:cube-outline",
+    mobile: "mdi:cellphone",
+    games: "mdi:gamepad-variant"
 };
 
 // Update all project image paths to use actual images
@@ -38,10 +38,46 @@ const PROJECT_IMAGES = {
     n8nbot: '/assets/projects/aibot.webp',
     puzzle: '/assets/projects/puzzle.webp',
     growapp: '/assets/projects/growapp.webp',
-    dedux: '/assets/projects/dedux.webp'
+    dedux: '/assets/projects/dedux.webp',
+    seilingBuidlbox: '/assets/projects/seiling-buidlbox-architecture.png',
+    hiveFi: '/assets/projects/customer-support-bot.webp',
+    aigentlayer: '/assets/projects/aibot.webp'
 };
 
 export const portafolioData: PortfolioItem[] = [
+    {
+        imgSrc: PROJECT_IMAGES.hiveFi,
+        title: 'Hive Fi',
+        category: 'ai',
+        skills: ['logos:n8n', 'logos:typescript-icon', 'logos:nodejs-icon'],
+        techStack: ['n8n', 'TypeScript', 'Node.js', 'LLM APIs'],
+        description: 'Autonomous AI workflow for finance intelligence. Winner — 1st Prize (Sozu Virtual AI Hack).',
+        demoURL: '#',
+        repoURL: '#',
+        anim: 'fade-up'
+    },
+    {
+        imgSrc: PROJECT_IMAGES.aigentlayer,
+        title: 'AIgentlayer',
+        category: 'ai',
+        skills: ['logos:python', 'logos:docker-icon', 'logos:typescript-icon'],
+        techStack: ['Python', 'TypeScript', 'Docker', 'Agent Frameworks'],
+        description: 'Agentic system layers for autonomous task execution. Winner — 1st Prize (Gaia’s Autonomous Hackathon).',
+        demoURL: '#',
+        repoURL: '#',
+        anim: 'fade-up'
+    },
+    {
+        imgSrc: PROJECT_IMAGES.seilingBuidlbox,
+        title: 'Seiling Buidlbox',
+        category: 'ai',
+        skills: ['logos:typescript-icon', 'logos:nodejs-icon', 'logos:docker-icon'],
+        techStack: ['TypeScript', 'Node.js', 'Docker', 'CLI/Tooling'],
+        description: 'Developer tooling for AI agents and infra. Winner — 1st Prize (Tooling & Infrastructure) at the SEI AI/Accelathon.',
+        demoURL: 'https://github.com/nicoware-dev/seiling-buidlbox',
+        repoURL: 'https://github.com/nicoware-dev/seiling-buidlbox',
+        anim: 'fade-up'
+    },
     {
         imgSrc: PROJECT_IMAGES.australopithecus,
         title: 'Australopithecus Project',

@@ -7,6 +7,7 @@ import Title from "../components/atoms/Title.astro";
 import SocialIcons from "../components/SocialIcons.astro";
 import { ContactForm } from "../components/ContactForm";
 import { Toaster } from 'sonner';
+import Boton from "../components/atoms/Boton.astro";
 ---
 
 <Layout title="Contact | Nicolas Dominici">
@@ -24,6 +25,9 @@ import { Toaster } from 'sonner';
                     <p class="intro-text">
                         I'm always excited to discuss new projects, ideas, or opportunities. Whether you have a specific project in mind or need guidance on leveraging technology for your business, feel free to reach out.
                     </p>
+                    <div class="quote-cta">
+                        <Boton href="https://forms.gle/Qz6YfDwRazVcU8Vo8" texto="Request a Quote" class="primary" target="_blank" />
+                    </div>
                     
                     <div class="contact-methods">
                         <div class="contact-item">
@@ -79,6 +83,9 @@ import { Toaster } from 'sonner';
         line-height: 1.6;
         color: var(--primary-90);
         margin-bottom: 4rem;
+    }
+    .quote-cta {
+        margin-bottom: 2.5rem;
     }
 
     .contact-methods {

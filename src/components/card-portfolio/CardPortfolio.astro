@@ -4,7 +4,7 @@ import './card-portfolio.css';
 interface Props {
 	imgSrc: string;
 	title: string;
-	descripcion: string;
+	description: string;
 	skills: string[];
 	demoURL: string;
 	repoURL: string;
@@ -15,7 +15,7 @@ interface Props {
 const {
 	imgSrc,
 	title,
-	descripcion,
+	description,
 	skills,
 	demoURL,
 	repoURL,
@@ -41,7 +41,7 @@ const {
 	</div>
 	<div class="card__content">
 		<h3>{title}</h3>
-		<p>{descripcion}</p>
+		<p>{description}</p>
 		<div class="card__skills">
 			{skills.map((skill) => (
 				<iconify-icon icon={skill} width="24" height="24" class="skill-icon" />
