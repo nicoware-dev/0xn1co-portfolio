@@ -1,8 +1,8 @@
 ---
 title: "Building Multiplayer Games with Node.js and WebSockets: A Beginner’s Guide"
 description: "Learn how to build a simple multiplayer game with Node.js and WebSockets. This step-by-step guide covers real-time updates, syncing game states, and handling player inputs in games like tic-tac-toe or a chat-based RPG."
-pubDate: "2024-9-30"
-heroImage: "/blog/b91.webp"
+pubDate: "2024-12-15"
+heroImage: "/blog/multiplayer-nodejs-websockets.jpeg"
 category: "Game Development"
 draft: false
 ---

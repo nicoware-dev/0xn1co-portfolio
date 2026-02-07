@@ -20,7 +20,7 @@ const categories = Object.entries(categoryTitles).map(([slug, title]) => ({
         <div class="overview-card">
             <div class="categories-grid">
                 {categories.map(category => (
-                    <a href={`/portfolio/${category.slug}`} class="category-item">
+                    <a href={`/portfolio?category=${category.slug}`} class="category-item">
                         <div class="icon-wrapper">
                             <iconify-icon icon={category.icon} width="24" height="24" />
                         </div>
@@ -41,6 +41,7 @@ const categories = Object.entries(categoryTitles).map(([slug, title]) => ({
         color: var(--primary-80);
         max-width: 600px;
         margin: 1rem auto 0;
+        font-family: var(--font-body);
     }
 
     .overview-card {
@@ -115,4 +116,4 @@ const categories = Object.entries(categoryTitles).map(([slug, title]) => ({
             padding: 1.2rem;
         }
     }
-</style> 
+</style>

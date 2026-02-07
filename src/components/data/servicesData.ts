@@ -4,12 +4,12 @@ export const services: ServiceDetail[] = [
     {
         slug: 'ai-automation',
         icon: "mdi:robot",
-        title: "AI Automation and Integration",
-        description: "Unlock the potential of AI to optimize your workflows, save time, and reduce costs. From chatbots to predictive analytics, we integrate intelligent solutions that empower your business to stay ahead in a competitive landscape.",
+        title: "AI Automation & Operational Systems",
+        description: "I design and implement automation systems that reduce repetitive work, improve consistency, and make operations easier to run. The goal is not more automation — it’s less friction.",
         features: [
-            "AI Chatbots and Virtual Assistants",
-            "Process Automation",
-            "Data Analysis and Insights"
+            "Workflow Automation",
+            "AI-Assisted Decision Support",
+            "Reliable Integrations"
         ],
         categories: [
             {
@@ -40,34 +40,8 @@ export const services: ServiceDetail[] = [
                 ]
             },
             {
-                title: "AI Chatbots and Virtual Assistants",
-                description: "Develop AI-driven chatbots to handle customer queries, sales support, or internal assistance. Our bots are tailored to meet your needs, using NLP (Natural Language Processing) for human-like interactions.",
-                deliverables: [
-                    "Fully functional chatbot integrated with platforms like WhatsApp or Slack",
-                    "Analytics to track user interactions and performance",
-                    "Training for employees to manage and improve the chatbot"
-                ],
-                outcomes: [
-                    "Provide 24/7 support without increasing staff costs",
-                    "Improve customer engagement with instant responses",
-                    "Boost sales through proactive customer interactions"
-                ],
-                pricing: [
-                    {
-                        name: "Basic Plan",
-                        price: "$3,000–$5,000",
-                        description: "Rule-based bots"
-                    },
-                    {
-                        name: "Advanced Plan",
-                        price: "$7,000–$15,000",
-                        description: "AI-powered, multi-channel bots"
-                    }
-                ]
-            },
-            {
                 title: "Process Automation",
-                description: "Automate repetitive tasks, such as data entry, invoicing, and reporting, with advanced Robotic Process Automation (RPA) tools. Save time and eliminate errors by streamlining workflows.",
+                description: "Automate repetitive tasks, such as data entry, invoicing, and reporting. Save time and eliminate errors by streamlining workflows.",
                 deliverables: [
                     "Custom automation scripts tailored to specific workflows",
                     "Workflow documentation and process blueprints",
@@ -90,32 +64,6 @@ export const services: ServiceDetail[] = [
                         description: "Full Workflow Optimization"
                     }
                 ]
-            },
-            {
-                title: "Data Analysis and Insights",
-                description: "Leverage AI to uncover patterns, trends, and opportunities in your data. From customer segmentation to predictive analytics, our tools provide actionable insights.",
-                deliverables: [
-                    "Custom dashboards and visualizations",
-                    "Data pipelines for seamless integration",
-                    "Predictive models to support decision-making"
-                ],
-                outcomes: [
-                    "Make informed business decisions backed by data",
-                    "Enhance marketing campaigns with targeted strategies",
-                    "Identify and capitalize on growth opportunities"
-                ],
-                pricing: [
-                    {
-                        name: "Basic Analysis",
-                        price: "$3,000–$7,000",
-                        description: "Single dataset analysis"
-                    },
-                    {
-                        name: "Advanced Analytics",
-                        price: "$10,000–$20,000",
-                        description: "Full-scale analytics solutions"
-                    }
-                ]
             }
         ]
     },
@@ -123,11 +71,11 @@ export const services: ServiceDetail[] = [
         slug: 'custom-software-development',
         icon: "mdi:code-braces",
         title: "Custom Software Development",
-        description: "Tailored software is the backbone of successful businesses in today's digital world. From small-scale applications to enterprise-grade systems, our solutions are designed to address your unique challenges and drive growth.",
+        description: "When automation is part of a larger system, I build custom software tailored to your operational needs. This includes internal tools, backend services, integrations, and lightweight platforms designed to support real workflows rather than abstract requirements.",
         features: [
-            "Web and Mobile Applications",
-            "Enterprise Systems",
-            "API Development and Integration"
+            "Internal Tools & Dashboards",
+            "Backend Services",
+            "Complex Integrations"
         ],
         categories: [
             {
@@ -187,132 +135,18 @@ export const services: ServiceDetail[] = [
                         description: "Fully integrated systems for larger organizations"
                     }
                 ]
-            },
-            {
-                title: "API Development and Integration",
-                description: "We create secure and scalable APIs, including RESTful and GraphQL, enabling seamless third-party integrations with services like Stripe, PayPal, or Twilio.",
-                deliverables: [
-                    "Secure and scalable APIs",
-                    "Comprehensive documentation for developers",
-                    "Testing and integration support"
-                ],
-                outcomes: [
-                    "Faster product development through modular APIs",
-                    "Enhanced functionality through third-party integrations"
-                ],
-                pricing: [
-                    {
-                        name: "Basic Plan",
-                        price: "$1,000–$5,000",
-                        description: "Single API development"
-                    },
-                    {
-                        name: "Advanced Plan",
-                        price: "$5,000–$15,000",
-                        description: "API suite and complex integrations"
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        slug: 'blockchain-solutions',
-        icon: "mdi:cube-outline",
-        title: "Blockchain Solutions",
-        description: "Blockchain offers unparalleled transparency, security, and efficiency. We help businesses harness its potential with solutions tailored to your industry.",
-        features: [
-            "Smart Contract Development",
-            "DeFi Applications",
-            "Blockchain Integration"
-        ],
-        categories: [
-            {
-                title: "Smart Contract Development",
-                description: "Design, audit, and deploy secure smart contracts for platforms like Ethereum, Conflux, and Binance Smart Chain. From token contracts to complex DeFi applications, we ensure your contracts are robust and reliable.",
-                deliverables: [
-                    "Audited smart contracts",
-                    "Deployment support",
-                    "Comprehensive test reports"
-                ],
-                outcomes: [
-                    "Reduce operational costs through automated transactions",
-                    "Increase trust and transparency in your ecosystem"
-                ],
-                pricing: [
-                    {
-                        name: "Basic Plan",
-                        price: "$1,000–$5,000",
-                        description: "Simple contracts"
-                    },
-                    {
-                        name: "Advanced Plan",
-                        price: "$10,000+",
-                        description: "Complex logic contracts"
-                    }
-                ]
-            },
-            {
-                title: "DeFi Applications",
-                description: "Develop decentralized finance (DeFi) platforms like decentralized exchanges (DEXs), lending protocols, or staking solutions.",
-                deliverables: [
-                    "Fully functional DApp (Decentralized Application)",
-                    "Front-end and back-end development",
-                    "User guides and onboarding support"
-                ],
-                outcomes: [
-                    "Attract users with cutting-edge financial tools",
-                    "Build trust with transparent systems",
-                    "Increase user engagement and transaction volumes"
-                ],
-                pricing: [
-                    {
-                        name: "Tier 1",
-                        price: "$10,000–$25,000",
-                        description: "Simple DApps"
-                    },
-                    {
-                        name: "Tier 2",
-                        price: "$50,000+",
-                        description: "Full-scale DeFi solutions"
-                    }
-                ]
-            },
-            {
-                title: "Blockchain Integration",
-                description: "Integrate blockchain into your existing systems or create new platforms that leverage its potential.",
-                deliverables: [
-                    "API integrations for blockchain functionality",
-                    "Wallet setups for users and businesses",
-                    "Testing and security audits"
-                ],
-                outcomes: [
-                    "Enhanced trust through transparency",
-                    "Reduced risks of fraud and tampering"
-                ],
-                pricing: [
-                    {
-                        name: "Starter Plan",
-                        price: "$5,000–$15,000",
-                        description: "Small integrations"
-                    },
-                    {
-                        name: "Advanced Plan",
-                        price: "$20,000+",
-                        description: "Full-system integrations"
-                    }
-                ]
             }
         ]
     },
     {
         slug: 'consulting',
         icon: "mdi:lightbulb-on-outline",
-        title: "Consulting and Content Creation",
-        description: "From strategic advice to engaging content, we provide end-to-end solutions to align your technology journey with business goals.",
+        title: "Consulting & Technical Strategy",
+        description: "For teams that need clarity before implementation, I offer consulting and technical guidance around automation strategy, system design, and process improvement. This is often used to assess automation readiness, identify what should (and should not) be automated, and reduce risk before committing to builds.",
         features: [
-            "Technical Strategy",
-            "Process Optimization",
-            "Content Creation"
+            "Automation Readiness Assessment",
+            "System Design & Architecture",
+            "Process Improvement"
         ],
         categories: [
             {
@@ -360,30 +194,6 @@ export const services: ServiceDetail[] = [
                         name: "Complete Overhaul",
                         price: "$10,000–$20,000",
                         description: "Comprehensive Process Overhaul"
-                    }
-                ]
-            },
-            {
-                title: "Content Creation",
-                description: "Create high-quality, engaging content to educate and inspire your audience.",
-                deliverables: [
-                    "Blog posts, guides, and documentation",
-                    "SEO-optimized content"
-                ],
-                outcomes: [
-                    "Improved online presence and credibility",
-                    "Enhanced customer understanding of your services"
-                ],
-                pricing: [
-                    {
-                        name: "Per Post",
-                        price: "$200–$500",
-                        description: "Individual content pieces"
-                    },
-                    {
-                        name: "Monthly Plan",
-                        price: "$1,000–$3,000/month",
-                        description: "Regular content creation and strategy"
                     }
                 ]
             }

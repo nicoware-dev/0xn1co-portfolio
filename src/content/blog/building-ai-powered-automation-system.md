@@ -1,8 +1,8 @@
 ---
 title: "Building an AI-Powered Automation System: Transforming Business Processes"
 description: "A comprehensive guide to implementing AI automation in business processes, from concept to deployment, with practical examples and best practices."
-pubDate: "2023-12-20"
-heroImage: "/blog/article1.webp"
+pubDate: "2025-09-20"
+heroImage: "/blog/building-ai-powered-automation-system.jpeg"
 category: "AI & Automation"
 draft: false
 ---

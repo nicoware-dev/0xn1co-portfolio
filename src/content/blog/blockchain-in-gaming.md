@@ -1,8 +1,8 @@
 ---
 title: "Integrating Blockchain in Gaming: NFTs, Play-to-Earn, and the Future of Digital Ownership"
 description: "Explore how blockchain technology is transforming gaming through NFTs, play-to-earn mechanics, and true digital ownership, offering players new opportunities and value."
-pubDate: "2024-5-30"
-heroImage: "/blog/b51.webp"
+pubDate: "2025-01-30"
+heroImage: "/blog/blockchain-in-gaming.jpeg"
 category: "Blockchain & Gaming"
 draft: false
 ---

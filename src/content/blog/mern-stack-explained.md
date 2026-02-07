@@ -1,8 +1,8 @@
 ---
 title: "The MERN Stack Explained: Building Full-Stack Applications with MongoDB, Express, React, and Node.js"
 description: "Learn the basics of the MERN stack, why it's so popular for full-stack JavaScript development, and how to create your own MERN app."
-pubDate: "2024-7-30"
-heroImage: "/blog/b71.webp"
+pubDate: "2025-03-22"
+heroImage: "/blog/mern-stack-explained.jpeg"
 category: "Full-Stack Development"
 draft: false
 ---

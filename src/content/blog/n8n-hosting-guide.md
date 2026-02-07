@@ -1,8 +1,8 @@
 ---
 title: "Hosting n8n Locally or on Google Cloud: Save Thousands on Workflow Automations"
 description: "Learn how to host n8n locally or on Google Cloud for unlimited workflows, AI agents, and automations at minimal cost, bypassing expensive SaaS platforms."
-pubDate: "2024-10-30"
-heroImage: "/blog/b101.webp"
+pubDate: "2025-08-15"
+heroImage: "/blog/n8n-hosting-guide.jpeg"
 category: "Automation & Cloud"
 draft: false
 ---

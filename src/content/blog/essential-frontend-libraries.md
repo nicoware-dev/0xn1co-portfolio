@@ -1,8 +1,8 @@
 ---
 title: "Essential Frontend Libraries for Modern Web Development"
 description: "Explore the top frontend libraries like React, Vue, and Astro to enhance your web development projects. Learn their strengths, use cases, and when to use each."
-pubDate: "2024-1-30"
-heroImage: "/blog/b11.webp"
+pubDate: "2025-06-05"
+heroImage: "/blog/essential-frontend-libraries.jpeg"
 category: "Frontend Development"
 draft: false
 ---

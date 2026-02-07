@@ -2,53 +2,65 @@ import type { PortfolioItem } from '../../types';
 
 export const categoryTitles = {
     ai: "AI & Automations",
-    websites: "Websites & Frontend",
-    fullstack: "Full-Stack & Backend",
+    saas: "SaaS & Micro-SaaS",
     blockchain: "Blockchain & Web3",
-    mobile: "Mobile Apps",
-    games: "Games"
 };
 
 // Update category descriptions
 export const categoryDescriptions = {
     ai: "Agentic workflows, n8n automations, multi‑LLM systems, and data‑aware tools.",
-    websites: "A collection of responsive websites and modern web interfaces with intuitive designs and seamless user experiences.",
-    fullstack: "Comprehensive web applications with robust backend systems, scalable APIs, and dynamic integrations.",
+    saas: "Scalable software-as-a-service platforms and specialized micro-SaaS solutions solving niche business problems.",
     blockchain: "Decentralized applications, smart contract projects, and blockchain-based tools for the Web3 ecosystem.",
-    mobile: "Mobile applications for Android and iOS, built with cross-platform technologies and optimized for performance.",
-    games: "Browser-based games featuring creative visuals, interactive gameplay, and smooth animations."
 };
 
 // Update category icons
 export const categoryIcons = {
     ai: "mdi:robot",
-    websites: "mdi:web",
-    fullstack: "mdi:database",
+    saas: "mdi:cloud-check",
     blockchain: "mdi:cube-outline",
-    mobile: "mdi:cellphone",
-    games: "mdi:gamepad-variant"
 };
 
 // Update all project image paths to use actual images
 const PROJECT_IMAGES = {
-    australopithecus: '/assets/projects/australopithecus.png',
-    portfolio: '/assets/projects/portfolio.png',
-    worksgood: '/assets/projects/worksgood.png',
     cuponchain: '/assets/projects/cuponchain.png',
-    n8nbot: '/assets/projects/aibot.webp',
-    puzzle: '/assets/projects/puzzle.webp',
-    growapp: '/assets/projects/growapp.webp',
-    dedux: '/assets/projects/dedux.webp',
+    n8nbot: '/assets/projects/customer-support-bot.webp',
     seilingBuidlbox: '/assets/projects/seiling-buidlbox-architecture.png',
-    hiveFi: '/assets/projects/customer-support-bot.webp',
-    aigentlayer: '/assets/projects/aibot.webp'
+    hiveFi: '/assets/projects/hivefi.png',
+    aigentlayer: '/assets/projects/aigentlayer.png',
+    automationToolkit: '/assets/projects/automationToolkit.jpeg', 
+    integrationLayer: '/assets/projects/integrationLayer.jpeg',
+    aiOpsSystem: '/assets/projects/aiOpsSystem.jpeg',
+    floehub: '/assets/projects/floehub.png', // Placeholder
+    umas: '/assets/projects/umas.jpeg' // Placeholder
 };
 
 export const portafolioData: PortfolioItem[] = [
     {
+        imgSrc: PROJECT_IMAGES.floehub,
+        title: 'Floe Hub',
+        category: 'saas',
+        skills: ['logos:react', 'logos:typescript-icon', 'logos:tailwindcss', 'logos:nodejs-icon'],
+        techStack: ['React', 'TypeScript', 'Node.js', 'PostgreSQL'],
+        description: 'Your Freelance Command Center. Track time, move leads, ship client work, and jot down income/expenses in one workspace.',
+        demoURL: 'https://floehub.com',
+        repoURL: '#',
+        anim: 'fade-up'
+    },
+    {
+        imgSrc: PROJECT_IMAGES.umas,
+        title: 'UMAS (Ultimate Multi Agent System)',
+        category: 'ai',
+        skills: ['logos:n8n', 'logos:openai-icon', 'logos:python'],
+        techStack: ['n8n', 'OpenAI', 'Python', 'Vector DB'],
+        description: 'A modular, scalable AI Workforce with an orchestrator agent and specialized squads for task management, content creation, and more.',
+        demoURL: '#',
+        repoURL: '#',
+        anim: 'fade-up'
+    },
+    {
         imgSrc: PROJECT_IMAGES.hiveFi,
         title: 'Hive Fi',
-        category: 'ai',
+        category: ['ai', 'blockchain'],
         skills: ['logos:n8n', 'logos:typescript-icon', 'logos:nodejs-icon'],
         techStack: ['n8n', 'TypeScript', 'Node.js', 'LLM APIs'],
         description: 'Autonomous AI workflow for finance intelligence. Winner — 1st Prize (Sozu Virtual AI Hack).',
@@ -59,7 +71,7 @@ export const portafolioData: PortfolioItem[] = [
     {
         imgSrc: PROJECT_IMAGES.aigentlayer,
         title: 'AIgentlayer',
-        category: 'ai',
+        category: ['ai', 'blockchain'],
         skills: ['logos:python', 'logos:docker-icon', 'logos:typescript-icon'],
         techStack: ['Python', 'TypeScript', 'Docker', 'Agent Frameworks'],
         description: 'Agentic system layers for autonomous task execution. Winner — 1st Prize (Gaia’s Autonomous Hackathon).',
@@ -70,45 +82,12 @@ export const portafolioData: PortfolioItem[] = [
     {
         imgSrc: PROJECT_IMAGES.seilingBuidlbox,
         title: 'Seiling Buidlbox',
-        category: 'ai',
+        category: ['ai', 'blockchain'],
         skills: ['logos:typescript-icon', 'logos:nodejs-icon', 'logos:docker-icon'],
         techStack: ['TypeScript', 'Node.js', 'Docker', 'CLI/Tooling'],
         description: 'Developer tooling for AI agents and infra. Winner — 1st Prize (Tooling & Infrastructure) at the SEI AI/Accelathon.',
         demoURL: 'https://github.com/nicoware-dev/seiling-buidlbox',
         repoURL: 'https://github.com/nicoware-dev/seiling-buidlbox',
-        anim: 'fade-up'
-    },
-    {
-        imgSrc: PROJECT_IMAGES.australopithecus,
-        title: 'Australopithecus Project',
-        category: 'websites',
-        skills: ['logos:react', 'logos:nextjs', 'logos:ethereum'],
-        techStack: ['Next.js', 'React', 'Ethereum', 'Web3.js', 'Tailwind CSS'],
-        description: 'A revolutionary music project integrating Web3 features, allowing artists and fans to interact in new ways through blockchain technology.',
-        demoURL: 'https://australopithecus.worksgood.xyz/',
-        repoURL: '#',
-        anim: 'fade-up'
-    },
-    {
-        imgSrc: PROJECT_IMAGES.portfolio,
-        title: 'Personal Portfolio',
-        category: 'websites',
-        skills: ['logos:astro', 'logos:typescript', 'logos:tailwindcss'],
-        techStack: ['Astro', 'TypeScript', 'Tailwind CSS', 'React'],
-        description: 'A modern, responsive portfolio website showcasing professional work and technical expertise with a focus on performance and user experience.',
-        demoURL: 'https://0xn1c0.worksgood.xyz/',
-        repoURL: '#',
-        anim: 'fade-up'
-    },
-    {
-        imgSrc: PROJECT_IMAGES.worksgood,
-        title: 'Worksgood Website',
-        category: 'websites',
-        skills: ['logos:nextjs', 'logos:typescript', 'logos:tailwindcss'],
-        techStack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'React'],
-        description: 'Corporate website for a holding company specializing in tech industry solutions, products, and services.',
-        demoURL: 'https://www.worksgood.xyz/',
-        repoURL: '#',
         anim: 'fade-up'
     },
     {
@@ -134,36 +113,36 @@ export const portafolioData: PortfolioItem[] = [
         anim: 'fade-up'
     },
     {
-        imgSrc: PROJECT_IMAGES.puzzle,
-        title: 'Puzzle Game',
-        category: 'games',
-        skills: ['logos:javascript', 'logos:html-5', 'logos:css-3'],
-        techStack: ['JavaScript', 'HTML5 Canvas', 'CSS3', 'Web Audio API'],
-        description: 'An engaging browser-based puzzle game featuring challenging levels, smooth animations, and interactive gameplay mechanics.',
+        imgSrc: PROJECT_IMAGES.automationToolkit,
+        title: 'Automation Decision Toolkit',
+        category: 'saas',
+        skills: ['logos:react', 'logos:typescript-icon', 'logos:tailwindcss'],
+        techStack: ['React', 'TypeScript', 'Tailwind', 'Calculators'],
+        description: 'A collection of decision-support tools helping teams assess readiness, ROI, prioritization, and risk before automating.',
         demoURL: '#',
         repoURL: '#',
-        anim: 'fade-right'
+        anim: 'fade-up'
     },
     {
-        imgSrc: PROJECT_IMAGES.growapp,
-        title: 'GrowApp',
-        category: 'mobile',
-        skills: ['logos:react', 'logos:firebase', 'logos:typescript-icon'],
-        techStack: ['React Native', 'Firebase', 'TypeScript', 'Node.js'],
-        description: 'A comprehensive mobile application for gardening enthusiasts to track and manage their plants, crops, and gardening schedules.',
+        imgSrc: PROJECT_IMAGES.integrationLayer,
+        title: 'Operational Integration Layer',
+        category: 'ai',
+        skills: ['logos:n8n', 'logos:nodejs-icon', 'logos:postgresql'],
+        techStack: ['n8n', 'Node.js', 'Postgres', 'Webhooks'],
+        description: 'A lightweight system designed to coordinate actions across multiple tools with minimal maintenance overhead.',
         demoURL: '#',
         repoURL: '#',
-        anim: 'fade-left'
+        anim: 'fade-up'
     },
     {
-        imgSrc: PROJECT_IMAGES.dedux,
-        title: 'Dedux Academy',
-        category: 'fullstack',
-        skills: ['logos:nodejs', 'logos:mongodb', 'logos:react'],
-        techStack: ['Node.js', 'MongoDB', 'React', 'Express', 'JWT'],
-        description: 'A full-featured online learning platform providing comprehensive courses and interactive learning experiences.',
-        demoURL: 'https://dedux.worksgood.xyz/',
+        imgSrc: PROJECT_IMAGES.aiOpsSystem,
+        title: 'AI-Assisted Operations System',
+        category: 'ai',
+        skills: ['logos:openai-icon', 'logos:python', 'logos:fastapi-icon'],
+        techStack: ['OpenAI API', 'Python', 'FastAPI', 'Vector DB'],
+        description: 'An example of AI used to support classification, routing, or prioritization within a stable operational framework.',
+        demoURL: '#',
         repoURL: '#',
-        anim: 'fade-right'
+        anim: 'fade-up'
     }
-]; 
+];

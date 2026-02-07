@@ -1,0 +1,145 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/header/Header.astro";
+import { mainMenu } from "../../components/data/menuData";
+import Footer from "../../components/Footer/Footer.astro";
+import Title from "../../components/atoms/Title.astro";
+import { caseStudies } from "../../components/data/caseStudiesData";
+---
+
+<Layout
+	title="Case Studies | Nicolas Dominici"
+	description="Real-world examples of how I help businesses reduce manual work and improve operations through automation."
+	image="/og-image.png"
+	type="website"
+>
+    <Header origin={mainMenu} />
+    <main class="pt-40 pb-20 px-4">
+        <div class="max-w-[var(--max-width)] mx-auto">
+            <div class="text-center mb-16">
+                <Title contenido="Case Studies" />
+                <h2 class="subtitle">Real Results & Outcomes</h2>
+            </div>
+            
+            <div class="grid gap-8">
+                {caseStudies.map(study => (
+                    <a href={`/case-studies/${study.slug}`} class="case-card">
+                        <div class="content">
+                            <span class="category">{study.category}</span>
+                            <h3>{study.title}</h3>
+                            <p class="subtitle-text">{study.subtitle}</p>
+                            <div class="impact-preview">
+                                {study.impact.map(item => (
+                                    <div class="impact-item">
+                                        <iconify-icon icon="mdi:check-circle" class="check-icon" />
+                                        <span>{item}</span>
+                                    </div>
+                                ))}
+                            </div>
+                            <div class="read-more">
+                                <span>Read Case Study</span>
+                                <iconify-icon icon="mdi:arrow-right" />
+                            </div>
+                        </div>
+                    </a>
+                ))}
+            </div>
+        </div>
+    </main>
+    <Footer />
+</Layout>
+
+<style>
+    .subtitle {
+        font-size: 2.4rem;
+        color: var(--primary-90);
+        margin-top: 1rem;
+    }
+
+    .case-card {
+        background: rgba(255, 255, 255, 0.03);
+        border-radius: 24px;
+        padding: 4rem;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        display: block;
+        backdrop-filter: blur(10px);
+    }
+
+    .case-card:hover {
+        transform: translateY(-5px);
+        border-color: rgba(59, 130, 246, 0.3);
+        background: rgba(255, 255, 255, 0.05);
+    }
+
+    .category {
+        color: var(--accent);
+        font-size: 1.4rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        display: block;
+    }
+
+    h3 {
+        font-size: 2.8rem;
+        color: var(--primary-100);
+        margin-bottom: 1rem;
+        font-family: var(--font-heading);
+    }
+
+    .subtitle-text {
+        font-size: 1.8rem;
+        color: var(--primary-80);
+        margin-bottom: 3rem;
+    }
+
+    .impact-preview {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        margin-bottom: 3rem;
+    }
+
+    .impact-item {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        color: var(--primary-90);
+        font-size: 1.6rem;
+    }
+
+    .check-icon {
+        color: var(--secondary);
+    }
+
+    .read-more {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        color: var(--primary);
+        font-weight: 600;
+        font-size: 1.6rem;
+        transition: gap 0.3s ease;
+    }
+
+    .case-card:hover .read-more {
+        gap: 1.2rem;
+    }
+
+    @media (max-width: 768px) {
+        .case-card {
+            padding: 2.5rem;
+        }
+
+        h3 {
+            font-size: 2.2rem;
+        }
+
+        .impact-preview {
+            flex-direction: column;
+            gap: 1rem;
+        }
+    }
+</style>

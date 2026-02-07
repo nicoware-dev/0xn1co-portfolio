@@ -7,10 +7,10 @@ import { services } from './data/servicesData';
     <div class="max-w-[var(--max-width)] mx-auto px-4">
         <div class="text-center mb-16">
             <Title contenido="Services" />
-            <p class="section-subtitle">Empowering Your Business Through Technology</p>
+            <p class="section-subtitle">Operational Clarity & Scalable Systems</p>
         </div>
 
-        <div class="grid md:grid-cols-2 gap-8">
+        <div class="grid md:grid-cols-3 gap-8">
             {services.map(service => (
                 <a href={`/services/${service.slug}`} class="service-card">
                     <div class="service-icon">

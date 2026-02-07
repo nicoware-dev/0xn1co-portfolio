@@ -42,7 +42,7 @@ const categories = [
 
             <div class="portfolio-grid" id="portfolio-grid">
                 {portafolioData.map(project => (
-                    <div class="project-item" data-category={project.category}>
+                    <div class="project-item" data-category={Array.isArray(project.category) ? project.category.join(',') : project.category}>
                         <Card {...project} />
                     </div>
                 ))}
@@ -61,7 +61,6 @@ const categories = [
         initPortfolio();
     });
 
-    // Also run on initial load if view transitions aren't being used or for first render
     if (document.readyState === 'complete' || document.readyState === 'interactive') {
         initPortfolio();
     } else {
@@ -73,6 +72,18 @@ const categories = [
         const projectItems = document.querySelectorAll('.project-item');
         const noResults = document.getElementById('no-results');
 
+        // Check for URL query param
+        const urlParams = new URLSearchParams(window.location.search);
+        const initialCategory = urlParams.get('category');
+
+        if (initialCategory) {
+            const btn = document.querySelector(`.filter-btn[data-filter="${initialCategory}"]`);
+            if (btn) {
+                // Simulate click to filter
+                (btn as HTMLElement).click();
+            }
+        }
+
         if (!filterBtns.length || !projectItems.length) return;
 
         filterBtns.forEach(btn => {
@@ -82,13 +93,14 @@ const categories = [
                 // Add active class to clicked button
                 btn.classList.add('active');
 
-                const filterValue = btn.getAttribute('data-filter');
+                const filterValue = btn.getAttribute('data-filter') || '';
                 let visibleCount = 0;
 
                 projectItems.forEach(item => {
-                    const category = item.getAttribute('data-category');
+                    const categoryAttr = item.getAttribute('data-category');
+                    const categories = categoryAttr ? categoryAttr.split(',') : [];
                     
-                    if (filterValue === 'all' || filterValue === category) {
+                    if (filterValue === 'all' || categories.includes(filterValue)) {
                         (item as HTMLElement).style.display = 'block';
                         // Add animation class for re-appearing items
                         item.classList.add('fade-in');
@@ -104,6 +116,18 @@ const categories = [
                 }
             });
         });
+        
+        // If we have an initial category, trigger the filter logic
+        if (initialCategory) {
+             const btn = document.querySelector(`.filter-btn[data-filter="${initialCategory}"]`);
+             if (btn) {
+                 // We need to manually trigger the logic because the click event might not be ready or we want to avoid animation on load if possible, 
+                 // but clicking is easiest. However, the event listener is added inside this function.
+                 // So we can just call the logic directly or dispatch event.
+                 // Dispatching click is fine.
+                 btn.dispatchEvent(new Event('click'));
+             }
+        }
     }
 </script>
 

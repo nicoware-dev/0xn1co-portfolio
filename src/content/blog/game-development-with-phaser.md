@@ -1,8 +1,8 @@
 ---
 title: "An Introduction to Game Development with Phaser.js"
 description: "Learn how to create 2D games with Phaser.js, a powerful framework for building browser-based HTML5 games. Perfect for beginners and experienced developers."
-pubDate: "2024-8-30"
-heroImage: "/blog/b81.webp"
+pubDate: "2024-11-10"
+heroImage: "/blog/game-development-with-phaser.jpeg"
 category: "Game Development"
 draft: false
 ---

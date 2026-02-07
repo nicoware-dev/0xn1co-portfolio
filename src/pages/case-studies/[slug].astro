@@ -1,0 +1,291 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/header/Header.astro";
+import { mainMenu } from "../../components/data/menuData";
+import Footer from "../../components/Footer/Footer.astro";
+import Boton from "../../components/atoms/Boton.astro";
+import { caseStudies } from "../../components/data/caseStudiesData";
+
+const { slug } = Astro.params;
+const study = caseStudies.find(s => s.slug === slug);
+
+if (!study) {
+    return Astro.redirect('/404');
+}
+---
+
+<Layout
+	title={`${study.title} | Case Study`}
+	description={study.challenge}
+	image="/og-image.png"
+	type="article"
+>
+    <Header origin={mainMenu} />
+    <main class="case-study-main">
+        <article class="max-w-[var(--max-width)] mx-auto">
+            <div class="header-section">
+                <a href="/case-studies" class="back-link">
+                    <iconify-icon icon="mdi:arrow-left" />
+                    Back to Case Studies
+                </a>
+                <div class="title-container">
+                    <span class="category">{study.category}</span>
+                    <h1 class="title">{study.title}</h1>
+                    <p class="subtitle">{study.subtitle}</p>
+                </div>
+            </div>
+
+            <div class="content-grid">
+                <div class="main-content">
+                    <section class="content-section">
+                        <h2>The Challenge</h2>
+                        <p>{study.challenge}</p>
+                    </section>
+
+                    <section class="content-section">
+                        <h2>The Solution</h2>
+                        <p>{study.solution}</p>
+                    </section>
+
+                    <section class="content-section">
+                        <h2>Business Impact</h2>
+                        <ul class="impact-list">
+                            {study.impact.map(item => (
+                                <li>
+                                    <div class="check-icon-wrapper">
+                                        <iconify-icon icon="mdi:check" class="check-icon" />
+                                    </div>
+                                    <span>{item}</span>
+                                </li>
+                            ))}
+                        </ul>
+                    </section>
+                </div>
+
+                <aside class="sidebar">
+                    <div class="sidebar-card tech-stack">
+                        <h3>Tech Stack</h3>
+                        <div class="tags">
+                            {study.techStack.map(tech => (
+                                <span class="tag">{tech}</span>
+                            ))}
+                        </div>
+                    </div>
+                    
+                    <div class="sidebar-card cta">
+                        <h3>Need similar results?</h3>
+                        <p>Let's discuss how we can improve your operations.</p>
+                        <Boton href="/contact" texto="Start a conversation" class="primary w-full" />
+                    </div>
+                </aside>
+            </div>
+        </article>
+    </main>
+    <Footer />
+</Layout>
+
+<style>
+    .case-study-main {
+        padding-top: 14rem;
+        padding-bottom: 8rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+    .header-section {
+        margin-bottom: 6rem;
+    }
+
+    .back-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.8rem;
+        color: var(--primary-80);
+        margin-bottom: 3rem;
+        transition: all 0.3s ease;
+        font-size: 1.5rem;
+        opacity: 0.8;
+    }
+
+    .back-link:hover {
+        color: var(--primary);
+        transform: translateX(-5px);
+        opacity: 1;
+    }
+
+    .title-container {
+        border-left: 4px solid var(--accent);
+        padding-left: 3rem;
+    }
+
+    .category {
+        color: var(--accent);
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: 600;
+        font-size: 1.4rem;
+        display: block;
+        margin-bottom: 1.5rem;
+    }
+
+    .title {
+        font-size: 4.8rem;
+        line-height: 1.1;
+        margin-bottom: 1.5rem;
+        color: var(--primary-100);
+        font-family: var(--font-heading);
+    }
+
+    .subtitle {
+        font-size: 2.4rem;
+        color: var(--primary-80);
+        line-height: 1.4;
+        font-weight: 300;
+    }
+
+    .content-grid {
+        display: grid;
+        grid-template-columns: 1fr 380px;
+        gap: 6rem;
+    }
+
+    .content-section {
+        margin-bottom: 5rem;
+    }
+
+    .content-section:last-child {
+        margin-bottom: 0;
+    }
+
+    h2 {
+        font-size: 2.8rem;
+        margin-bottom: 2rem;
+        color: var(--primary-100);
+        font-family: var(--font-heading);
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    h2::after {
+        content: '';
+        height: 1px;
+        flex-grow: 1;
+        background: linear-gradient(to right, rgba(255,255,255,0.1), transparent);
+    }
+
+    p {
+        font-size: 1.8rem;
+        line-height: 1.8;
+        color: var(--primary-90);
+    }
+
+    .impact-list {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .impact-list li {
+        display: flex;
+        align-items: flex-start;
+        gap: 1.5rem;
+        font-size: 1.8rem;
+        color: var(--primary-100);
+        background: rgba(255, 255, 255, 0.02);
+        padding: 2rem;
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        transition: transform 0.3s ease;
+    }
+
+    .impact-list li:hover {
+        transform: translateX(5px);
+        background: rgba(255, 255, 255, 0.04);
+        border-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .check-icon-wrapper {
+        background: rgba(14, 165, 233, 0.1);
+        color: var(--secondary);
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 0.3rem;
+        flex-shrink: 0;
+    }
+
+    .sidebar {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .sidebar-card {
+        background: rgba(11, 15, 23, 0.6);
+        padding: 3rem;
+        border-radius: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(10px);
+    }
+
+    .sidebar-card h3 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+        color: var(--primary-100);
+    }
+
+    .sidebar-card h3::after {
+        display: none;
+    }
+
+    .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .tag {
+        background: rgba(255, 255, 255, 0.05);
+        color: var(--primary-90);
+        padding: 0.8rem 1.6rem;
+        border-radius: 100px;
+        font-size: 1.4rem;
+        font-weight: 500;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        transition: all 0.3s ease;
+    }
+
+    .tag:hover {
+        background: rgba(59, 130, 246, 0.15);
+        color: var(--primary);
+        border-color: var(--primary);
+    }
+
+    .cta p {
+        font-size: 1.6rem;
+        margin-bottom: 2.5rem;
+    }
+
+    @media (max-width: 900px) {
+        .content-grid {
+            grid-template-columns: 1fr;
+            gap: 4rem;
+        }
+
+        .title {
+            font-size: 3.6rem;
+        }
+        
+        .sidebar {
+            order: 2;
+        }
+        
+        .title-container {
+            padding-left: 2rem;
+        }
+    }
+</style>

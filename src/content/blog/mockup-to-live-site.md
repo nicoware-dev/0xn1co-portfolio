@@ -1,8 +1,8 @@
 ---
 title: "From Mockup to Live Site: A Frontend Developer’s Workflow"
 description: "Learn the step-by-step process a frontend developer uses to turn a design mockup into a fully functional website, from planning to deployment."
-pubDate: "2024-2-25"
-heroImage: "/blog/b21.webp"
+pubDate: "2025-04-18"
+heroImage: "/blog/mockup-to-live-site.jpeg"
 category: "Frontend Development"
 draft: false
 ---

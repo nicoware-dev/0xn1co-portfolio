@@ -24,6 +24,12 @@ export const mainMenu = [
         content: "Portfolio"
     },
     {
+        title: "Case Studies",
+        url: "/case-studies",
+        icon: "mdi:file-document-outline",
+        content: "Case Studies"
+    },
+    {
         title: "Blog",
         url: "/blog",
         icon: "mdi:post",
