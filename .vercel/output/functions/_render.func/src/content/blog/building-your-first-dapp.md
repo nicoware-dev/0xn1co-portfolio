@@ -1,8 +1,8 @@
 ---
 title: "From Idea to Launch: How to Build Your First Decentralized Application (DApp)"
 description: "A step-by-step guide to building your first DApp, from defining the idea and writing a smart contract to deploying on the blockchain and creating a frontend."
-pubDate: "2024-4-30"
-heroImage: "/blog/b41.webp"
+pubDate: "2025-02-25"
+heroImage: "/blog/building-your-first-dapp.jpeg"
 category: "Blockchain Development"
 draft: false
 ---

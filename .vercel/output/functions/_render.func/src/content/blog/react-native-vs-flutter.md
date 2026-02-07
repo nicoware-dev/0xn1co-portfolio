@@ -1,8 +1,8 @@
 ---
 title: "Creating Cross-Platform Mobile Apps: React Native vs. Flutter"
 description: "Compare React Native and Flutter, two major frameworks for cross-platform mobile app development. Learn their strengths, weaknesses, and how to choose the best fit for your project."
-pubDate: "2024-6-30"
-heroImage: "/blog/b61.webp"
+pubDate: "2025-05-12"
+heroImage: "/blog/react-native-vs-flutter.jpeg"
 category: "Mobile Development"
 draft: false
 ---

@@ -1,8 +1,8 @@
 ---
 title: "Building High-Performance Websites: Tips and Tools for Developers"
 description: "Discover practical tips and essential tools to create fast, efficient, and user-friendly websites that perform exceptionally well across all devices and browsers."
-pubDate: "2024-3-30"
-heroImage: "/blog/b31.webp"
+pubDate: "2025-07-10"
+heroImage: "/blog/building-high-performance-websites.jpeg"
 category: "Web Development"
 draft: false
 ---

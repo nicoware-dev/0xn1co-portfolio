@@ -1,8 +1,8 @@
 /* empty css                                 */
 import { a as createComponent, r as renderTemplate, d as renderComponent, m as maybeRenderHead } from '../chunks/astro/server_D321Zypn.mjs';
 import 'kleur/colors';
-import { $ as $$Header, m as mainMenu, c as $$SocialIcons, a as $$Footer, b as $$Layout } from '../chunks/Footer_DhwpaEJp.mjs';
-import { $ as $$Title } from '../chunks/Title_BR5RLFOp.mjs';
+import { $ as $$Header, m as mainMenu, c as $$SocialIcons, a as $$Footer, b as $$Layout } from '../chunks/Footer_Bz4AiNVI.mjs';
+import { $ as $$Title } from '../chunks/Title_C5xcF7xu.mjs';
 /* empty css                                 */
 export { renderers } from '../renderers.mjs';
 
