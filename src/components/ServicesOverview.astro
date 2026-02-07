@@ -14,18 +14,20 @@ import { services } from './data/servicesData';
             {services.map(service => (
                 <a href={`/services/${service.slug}`} class="service-card">
                     <div class="service-icon">
-                        <iconify-icon icon={service.icon} width="40" height="40" />
+                        <iconify-icon icon={service.icon} width="48" height="48" />
                     </div>
-                    <h3 class="service-title">{service.title}</h3>
-                    <p class="service-description">{service.description}</p>
-                    <ul class="service-features">
-                        {service.features.map(feature => (
-                            <li>{feature}</li>
-                        ))}
-                    </ul>
-                    <div class="learn-more">
-                        <span>Learn More</span>
-                        <iconify-icon icon="mdi:arrow-right" width="20" height="20" />
+                    <div class="service-content">
+                        <h3 class="service-title">{service.title}</h3>
+                        <p class="service-description">{service.description}</p>
+                        <ul class="service-features">
+                            {service.features.map(feature => (
+                                <li>{feature}</li>
+                            ))}
+                        </ul>
+                        <div class="learn-more">
+                            <span>Learn More</span>
+                            <iconify-icon icon="mdi:arrow-right" width="20" height="20" />
+                        </div>
                     </div>
                 </a>
             ))}
@@ -39,65 +41,117 @@ import { services } from './data/servicesData';
         color: var(--primary-80);
         max-width: 600px;
         margin: 1rem auto 0;
+        font-family: var(--font-body);
     }
 
     .service-card {
-        background: rgba(123, 74, 226, 0.1);
-        border-radius: 16px;
-        padding: 3rem;
-        transition: all 0.3s ease;
-        border: 1px solid rgba(123, 74, 226, 0.2);
+        background: rgba(255, 255, 255, 0.03);
+        border-radius: 24px;
+        padding: 3.5rem;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        position: relative;
+        overflow: hidden;
+        backdrop-filter: blur(10px);
+    }
+
+    .service-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle at top right, rgba(59, 130, 246, 0.1), transparent 50%);
+        opacity: 0;
+        transition: opacity 0.4s ease;
     }
 
     .service-card:hover {
-        transform: translateY(-5px);
-        background: var(--hover-gradient);
-        border-color: var(--accent);
+        transform: translateY(-8px);
+        border-color: rgba(59, 130, 246, 0.3);
+        box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.3);
+    }
+
+    .service-card:hover::before {
+        opacity: 1;
     }
 
     .service-icon {
-        color: var(--accent);
-        margin-bottom: 2rem;
+        color: var(--primary);
+        background: rgba(59, 130, 246, 0.1);
+        width: 80px;
+        height: 80px;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.4s ease;
+    }
+
+    .service-card:hover .service-icon {
+        background: var(--primary);
+        color: white;
+        transform: scale(1.1) rotate(-5deg);
     }
 
     .service-title {
-        font-size: 2.2rem;
-        font-weight: 600;
+        font-size: 2.4rem;
+        font-weight: 700;
         margin-bottom: 1.5rem;
-        background: var(--text-gradient);
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
+        color: var(--primary-100);
+        font-family: var(--font-heading);
     }
 
     .service-description {
         font-size: 1.6rem;
-        line-height: 1.6;
+        line-height: 1.7;
         color: var(--primary-90);
         margin-bottom: 2rem;
     }
 
     .service-features {
-        list-style: disc;
-        padding-left: 2rem;
-        margin-bottom: 2rem;
+        list-style: none;
+        padding: 0;
+        margin-bottom: 2.5rem;
         color: var(--primary-80);
-        font-size: 1.6rem;
+        font-size: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
     }
 
     .service-features li {
-        margin-bottom: 0.5rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .service-features li::before {
+        content: '•';
+        color: var(--secondary);
+        font-size: 2rem;
+        line-height: 1;
     }
 
     .learn-more {
         display: flex;
         align-items: center;
-        gap: 0.5rem;
-        color: var(--accent);
+        gap: 0.8rem;
+        color: var(--secondary);
+        font-weight: 600;
         transition: transform 0.3s ease;
+        margin-top: auto;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        font-size: 1.4rem;
     }
 
     .service-card:hover .learn-more {
-        transform: translateX(5px);
+        transform: translateX(8px);
+        color: var(--primary);
     }
-</style> 
+</style>

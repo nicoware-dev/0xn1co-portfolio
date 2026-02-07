@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://0xn1co-portfolio.vercel.app/sitemap-index.xml

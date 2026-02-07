@@ -3,8 +3,6 @@ import SocialIcons from '../SocialIcons.astro';
 import Title from '../atoms/Title.astro';
 import Boton from '../atoms/Boton.astro';
 import "./about.css"
-
-
 ---
 
 <section id="about" class="about">
@@ -12,7 +10,8 @@ import "./about.css"
 		<div class="about__content">
 			<Title margin="1rem" contenido="About Me" />
 			<p class="about__text">
-				I'm an AI Automation & Agentic Systems Engineer with 10+ years across engineering, software, and technical leadership. I design production‑ready n8n automations, multi‑agent architectures, and intelligent workflows that connect LLMs, tools, and data systems to deliver measurable outcomes—fewer manual steps, faster cycles, and higher reliability. I bridge complex AI with practical business value.			</p>
+				I'm an AI Automation & Agentic Systems Engineer with 10+ years across engineering, software, and technical leadership. I design production‑ready n8n automations, multi‑agent architectures, and intelligent workflows that connect LLMs, tools, and data systems to deliver measurable outcomes—fewer manual steps, faster cycles, and higher reliability. I bridge complex AI with practical business value.
+			</p>
 			<div class="social-icons-container">
 				<SocialIcons width="25" height="25"/>
 			</div>
@@ -22,55 +21,3 @@ import "./about.css"
 		</div>
 	</div>
 </section>
-
-<style>
-	.about {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		width: 100%;
-		padding: 8rem 0;
-	}
-
-	.about__container {
-		max-width: var(--max-width);
-		padding: 0 2rem;
-		text-align: center;
-	}
-
-	.about__content {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		gap: 2.1rem;
-		max-width: 80rem;
-		margin: 0 auto;
-	}
-
-	.about__text {
-		font-size: 1.8rem;
-		line-height: 1.6;
-		color: var(--primary-90);
-	}
-
-	.social-icons-container {
-		display: flex;
-		justify-content: center;
-		width: 100%;
-		margin-top: 1rem;
-	}
-
-	.button-wrapper {
-		margin-top: 1rem;
-	}
-
-	@media screen and (max-width: 768px) {
-		.about {
-			padding: 6rem 0;
-		}
-		
-		.about__text {
-			font-size: 1.6rem;
-		}
-	}
-</style>

@@ -1,0 +1,120 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/header/Header.astro";
+import { mainMenu } from "../components/data/menuData";
+import Footer from "../components/Footer/Footer.astro";
+import Title from "../components/atoms/Title.astro";
+import { categoryTitles, categoryDescriptions, categoryIcons } from "../components/data/portfolioData";
+
+const categories = Object.entries(categoryTitles).map(([slug, title]) => ({
+    title,
+    icon: categoryIcons[slug],
+    description: categoryDescriptions[slug],
+    slug
+}));
+---
+
+<Layout
+	title="Portfolio | Nicolas Dominici"
+	description="Explore my portfolio of AI automation projects, web development work, and innovative solutions across multiple categories."
+	image="/og-image.png"
+	type="website"
+>
+    <Header origin={mainMenu} />
+    <main class="pt-40 pb-20 px-4">
+        <div class="max-w-[var(--max-width)] mx-auto">
+            <div class="text-center mb-16">
+                <Title contenido="Portfolio" />
+                <h2 class="subtitle">Browse Projects by Category</h2>
+            </div>
+            
+            <div class="categories-grid">
+                {categories.map(category => (
+                    <a href={`/portfolio/${category.slug}`} class="category-card scroll-animate fade-up">
+                        <div class="icon-wrapper">
+                            <iconify-icon icon={category.icon} width="40" height="40" />
+                        </div>
+                        <h3>{category.title}</h3>
+                        <p>{category.description}</p>
+                        <div class="arrow-icon">
+                            <iconify-icon icon="mdi:arrow-right" width="24" height="24" />
+                        </div>
+                    </a>
+                ))}
+            </div>
+        </div>
+    </main>
+    <Footer />
+</Layout>
+
+<style>
+    .subtitle {
+        font-size: 2.4rem;
+        color: var(--primary-90);
+        margin-top: 1rem;
+    }
+
+    .categories-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+    }
+
+    .category-card {
+        position: relative;
+        background: var(--card-gradient);
+        border-radius: 16px;
+        padding: 2.5rem;
+        border: 1px solid rgba(123, 74, 226, 0.2);
+        transition: all 0.3s ease;
+        overflow: hidden;
+    }
+
+    .category-card:hover {
+        transform: translateY(-5px);
+        background: var(--hover-gradient);
+        border-color: var(--accent);
+    }
+
+    .icon-wrapper {
+        color: var(--accent);
+        margin-bottom: 1.5rem;
+    }
+
+    .category-card h3 {
+        font-size: 2rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        background: var(--text-gradient);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .category-card p {
+        font-size: 1.6rem;
+        color: var(--primary-80);
+        margin-bottom: 2rem;
+    }
+
+    .arrow-icon {
+        position: absolute;
+        bottom: 2.5rem;
+        right: 2.5rem;
+        color: var(--accent);
+        opacity: 0;
+        transform: translateX(-10px);
+        transition: all 0.3s ease;
+    }
+
+    .category-card:hover .arrow-icon {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    @media (max-width: 768px) {
+        .categories-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style> 

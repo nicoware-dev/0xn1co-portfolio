@@ -3,7 +3,8 @@ import Boton from '../atoms/Boton.astro';
 ---
 
 <section class="cta-section">
-    <div class="max-w-[var(--max-width)] mx-auto px-4">
+    <div class="cta-bg"></div>
+    <div class="max-w-[var(--max-width)] mx-auto px-4 relative z-10">
         <div class="cta-container">
             <h2>Ready to Transform Your Ideas into Reality?</h2>
             <p>Let's collaborate to build innovative solutions that drive your business forward. Whether you need custom software, AI integration, or technical consultation, I'm here to help.</p>
@@ -26,44 +27,79 @@ import Boton from '../atoms/Boton.astro';
 
 <style>
     .cta-section {
-        padding: 8rem 0;
-        background: var(--card-gradient);
-        border-top: 1px solid rgba(123, 74, 226, 0.2);
-        border-bottom: 1px solid rgba(123, 74, 226, 0.2);
+        padding: 10rem 0;
+        position: relative;
+        overflow: hidden;
+        margin: 4rem 0;
+    }
+
+    .cta-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(180deg, rgba(11, 15, 23, 0) 0%, rgba(59, 130, 246, 0.1) 50%, rgba(11, 15, 23, 0) 100%);
+        z-index: 1;
+    }
+
+    .cta-bg::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle, rgba(14, 165, 233, 0.1) 0%, transparent 70%);
+        filter: blur(60px);
     }
 
     .cta-container {
         text-align: center;
         max-width: 800px;
         margin: 0 auto;
+        background: rgba(255, 255, 255, 0.02);
+        backdrop-filter: blur(12px);
+        padding: 6rem;
+        border-radius: 32px;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        box-shadow: 0 20px 50px -20px rgba(0, 0, 0, 0.5);
     }
 
     h2 {
-        font-size: 3.6rem;
+        font-size: 4rem;
         font-weight: 700;
-        margin-bottom: 2rem;
-        background: var(--text-gradient);
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
+        margin-bottom: 2.5rem;
+        color: var(--primary-100);
+        line-height: 1.1;
+        font-family: var(--font-heading);
     }
 
     p {
         font-size: 1.8rem;
         color: var(--primary-90);
         margin-bottom: 4rem;
-        line-height: 1.6;
+        line-height: 1.7;
+        max-width: 60ch;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .cta-buttons {
         display: flex;
-        gap: 2rem;
+        gap: 2.5rem;
         justify-content: center;
     }
 
     @media (max-width: 768px) {
         .cta-section {
             padding: 6rem 0;
+        }
+
+        .cta-container {
+            padding: 3rem 2rem;
+            border-radius: 24px;
         }
 
         h2 {
@@ -80,4 +116,4 @@ import Boton from '../atoms/Boton.astro';
             gap: 1.5rem;
         }
     }
-</style> 
+</style>
